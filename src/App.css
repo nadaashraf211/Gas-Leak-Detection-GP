@@ -1,0 +1,220 @@
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  /* overflow: hidden; */
+  position: relative;
+  color: #c9efc6 !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 33px;
+}
+
+@media (min-width:1700px) {
+  main .container {
+    max-width: 100%;
+    padding: 0 150px;
+  }
+}
+
+
+/************ Navbar Css ************/
+/* Existing styles for the main navbar */
+/* Existing styles for the main navbar */
+nav.navbar {
+  padding: 2px 5px;
+  position: fixed;
+  width: 100%;
+  top: 15px;
+  font-family: 'Times New Roman', Times, serif;
+
+  background-color: #fff;
+  border-radius: 15px;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+  box-shadow: 0px 8px 16px rgba(122, 94, 94, 0.5);
+
+}
+
+nav.navbar.scrolled {
+  padding: 2px 20px;
+  /* color: #054003 !important; */
+  box-shadow: 0px 8px 16px rgba(122, 94, 94, 0.5);
+
+}
+
+nav.navbar a.navbar-brand {
+  width: 9%;
+}
+
+/* nav.navbar a.navbar-brand {
+  width: 25%;
+} */
+
+.serve {
+  font-weight: 300;
+  color: #0d0d0d !important;
+  letter-spacing: 1px;
+  padding: 2px 20px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+}
+
+.dropdown-item {
+  font-weight: 400;
+  color: #0d0d0d !important;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  /* opacity: 0.7; */
+
+}
+
+
+.logo {
+  width: 80px;
+  height: 80px;
+  padding-bottom: 10px;
+}
+
+.btn-primary {
+  --bs-btn-bg: white;
+  font-weight: 400;
+  color: #054003 !important;
+  letter-spacing: 1px;
+  /* padding: 10px 40px; */
+  font-size: 20px;
+  padding-left: 30px;
+  padding-top: 15px;
+  font-weight: bold;
+  opacity: 0.7;
+  --bs-btn-hover-border-color: white;
+  --bs-btn-active-bg: white;
+  --bs-btn-disabled-bg: white;
+  --bs-btn-disabled-border-color: white;
+  --bs-btn-border-color: white;
+  --bs-btn-hover-bg: white;
+  --bs-btn-active-border-color: white;
+
+
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+  color: #042803 !important;
+  opacity: 1;
+  --bs-btn-bg: white;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: #054003 !important;
+  letter-spacing: 1px;
+  padding: 20px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  color: #042803 !important;
+  opacity: 1;
+}
+
+nav.navbar .navbar-nav .nav-item.dropdown:hover .nav-link {
+  color: #042803 !important;
+  opacity: 1;
+}
+
+
+
+nav.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  color: #000000;
+  font-weight: bold;
+}
+
+
+nav.navbar .navbar-nav a.nav-link.navbar-link.login-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.other-link:hover {
+  color: #042803 !important;
+  opacity: 1;
+}
+
+.dropdown-toggle::after {
+  border: none;
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  transition: all 300ms linear;
+  top: -2px;
+}
+
+nav.navbar .navbar-toggler-icon:focus {
+  border-bottom: 2px solid #fff;
+}
+
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  content: '';
+  z-index: 2;
+  transition: all 300ms linear;
+}
+
+nav.navbar .navbar-toggler-icon:after {
+  top: 8px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(45deg);
+  background-color: #fff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #fff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent;
+}

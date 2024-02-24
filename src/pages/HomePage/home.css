@@ -1,0 +1,101 @@
+/* body {
+    background-image: url(H:\gas_leak_detection\src\assets\images\header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} */
+
+.home {
+    height: 1000px;
+    background: url('../../assets/images/header.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+
+}
+
+.home .home-information {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.home .home-information .home-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #5e5e5e;
+}
+
+.home .home-information .home-info {
+    font-size: 33px;
+    color: #eb5424;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+.home .home-information .home-desc {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #888;
+    margin-bottom: 35px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.home .home-information .home-desc span {
+    color: #000;
+
+}
+
+.home .home-information .home-btn {
+    background: #eb5424;
+    color: #fff;
+    font-size: 18px;
+    width: 150px;
+    border: 0;
+
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold
+}
+
+.home .home-information .home-btn:hover {
+    background: #fff;
+    color: #eb5424
+}
+
+
+.About {
+    background-color: rgb(217, 222, 217);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+@media (max-width:768px) {
+    .home .home-information .home-title {
+        font-size: 40px;
+        color: #fff
+    }
+
+    .home .home-information .home-info {
+        font-size: 20px
+    }
+
+    .home .home-information .home-desc {
+        font-size: 15px
+    }
+}
+
+@media (max-width:575px) {
+    .home .home-information .home-title {
+        font-size: 30px;
+    }
+}
