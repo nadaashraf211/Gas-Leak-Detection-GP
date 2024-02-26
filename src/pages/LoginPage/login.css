@@ -7,17 +7,26 @@
     justify-content: center;
     color: rgb(12, 11, 11);
     font-family: 'Times New Roman', Times, serif;
-
-    background-image: linear-gradient(79deg, #8f968f, #e0b092, #b7ecbe);
+    background-image: linear-gradient(79deg, #929563, #E0E0DF, #1E3E2F);
 }
 
 
+.reg {
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+
+}
 
 .auth-form-container,
 .login-form,
 .register-form {
     display: flex;
     flex-direction: column;
+    width: auto;
+
+
 }
 
 @media screen and (min-width: 600px) {
@@ -25,7 +34,7 @@
         padding: 5rem;
         border: 1px solid white;
         border-radius: 10px;
-        margin: 0.5rem;
+        margin: 5rem;
     }
 }
 
@@ -39,33 +48,48 @@ label {
 }
 
 input {
-    margin: 0.5rem 0;
-    padding: 1rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem;
     border: none;
     font-family: 'Times New Roman', Times, serif;
 
     border-radius: 10px;
 }
 
-button {
+.sub {
     border: none;
     background-color: rgb(237, 243, 238);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
-
-    color: #009f52;
+    margin: 1.5rem 0;
+    color: #0c3622;
 }
 
-.sub:hover {
-    background-color: rgb(228, 222, 222);
-    color: white;
-    font-weight: bold;
-}
+
 
 .link-btn {
     background: none;
     color: rgb(14, 39, 19);
+    border: none;
     text-decoration: underline;
+}
+
+.gender-radio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.gender-radio div {
+    display: flex;
+    align-items: center;
+
+}
+
+.gender-radio input[type="radio"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /* Adjust the margin between radio buttons as needed */
 }

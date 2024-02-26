@@ -1,0 +1,74 @@
+.Fusion {
+  /* background-color: rgb(173 205 127); */
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 150px;
+}
+
+.Fusion .senH {
+  color: white;
+  font-weight: bold;
+  /* margin-top: 10px; */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 0px 3px 6px rgba(122, 94, 94, 0.3);
+  border-radius: 10px;
+  background-color: #a1ad93;
+  border: 3px solid #a1ad93;
+}
+
+/* .Sensor{
+        background-color: aqua;
+    } */
+.Fusion .sensText {
+  font-family: 'Times New Roman', Times, serif;
+  color: #60774c;
+  font-size: 25px;
+}
+
+.Fusion .form-control {
+  width: 300px;
+  /* background-color: #b5c8ac; */
+}
+
+/* .Sensor .btn1{
+        margin-left: 250px;
+    } */
+.Fusion .data {
+  margin-top: 50px;
+}
+
+.Fusion .upload {
+
+  padding: 10px 20px;
+  background-color: #485935;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  /* Change cursor on hover */
+}
+
+.Fusion .upload:hover {
+  /* Hover styles */
+  background-color: #090909;
+  /* Change background color on hover */
+}
+
+.file-input {
+  position: relative;
+  color: #000;
+}
+
+.Fusion .submit {
+  background-color: #485935;
+  color: #fff;
+}
+
+.Fusion .submit:hover {
+  background-color: #070707;
+}

@@ -1,0 +1,52 @@
+
+.Sucess{
+    margin-top: 150px;
+}
+/* .modal-content {
+    max-width: 400px;
+    margin: auto;
+} */
+.modal-header {
+    border-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+.modal-body {
+    text-align: center;
+    color: #f2f2f2;
+    
+}
+.Sucess .modal-body .txt{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+.modal-footer {
+    border-top: 0;
+    justify-content: center;
+}
+.checkmark-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    background-color: #f2f2f2;
+}
+.checkmark {
+    color: #4BB543;
+    font-size: 30px;
+}
+.Sucess .btn {
+    background-color: #4BB543;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.Sucess .btn:hover{
+    background-color: #b8c690;
+}

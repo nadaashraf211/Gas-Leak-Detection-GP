@@ -1,0 +1,46 @@
+/* About.css */
+
+.carousel-image {
+
+    /* width: 600px; */
+    /* Adjust the width as needed */
+    /* height: auto; */
+    /* Adjust the height as needed */
+    object-fit: cover;
+    /* border-radius: 10px; */
+    margin: 0 auto;
+    /* Center the image horizontally */
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+}
+
+.About {
+    text-align: center;
+    /* background-image: url('../../assets/images/header.jpg'); */
+    /* background-size: cover; */
+    background-position: center;
+    text-align: center;
+    position: relative;
+    background-color: #dde0da;
+    /* background-image: linear-gradient(50deg, #b4b7b6, #bfbfaf, #eaeeca); */
+    /* Adjust the alpha value (0.5 in this case) for transparency */
+    left: 0;
+    right: 0;
+
+}
+
+.carousel-caption {
+    text-align: center;
+    bottom: 0;
+}
+
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+.col-lg-8 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

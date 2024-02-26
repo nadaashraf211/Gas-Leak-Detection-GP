@@ -1,0 +1,56 @@
+.contact {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  color: rgb(12, 11, 11);
+  font-family: 'Times New Roman', Times, serif;
+  background-image: linear-gradient(79deg, #929563, #E0E0DF, #1E3E2F);
+}
+
+.contact-us-container {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+@media screen and (min-width: 600px) {
+  .contact-us-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 5rem;
+  }
+}
+
+
+
+.sub:hover {
+  background-color: rgb(240, 235, 235);
+  color: rgb(18, 17, 17);
+  font-weight: bold;
+}
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+
+
+input,
+textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}

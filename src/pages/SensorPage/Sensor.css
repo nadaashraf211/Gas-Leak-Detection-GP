@@ -1,0 +1,53 @@
+.Sensor .senH {
+    color: white;
+    font-weight: bold;
+    /* margin-top: 10px; */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px;
+    box-shadow: 0px 3px 6px rgba(122, 94, 94, 0.3);
+    border-radius: 10px;
+    background-color: #a1ad93;
+    border: 3px solid #a1ad93;
+}
+
+
+.Sensor {
+    /* background-color: rgb(173 205 127); */
+    margin-left: 80px;
+    margin-right: 80px;
+    /* margin-top: 100px; */
+    margin-bottom: 100px;
+}
+
+.Sensor .sensText {
+    font-family: 'Times New Roman', Times, serif;
+    /* color:#726767; */
+    color: #60774c;
+    font-size: 25px;
+}
+
+.Sensor .form-control {
+    width: 300px;
+    /* background-color: #b5c8ac; */
+    margin-top: 30px;
+}
+
+
+.Sensor .data {
+    margin-top: 50px;
+}
+
+.Sensor .submit {
+    /* background-color: rgb(41, 40, 40); */
+    background-color: #485935;
+    color: #fff;
+}
+
+.Sensor .submit:hover {
+    /* background-color: #90a76a; */
+    background-color: #0c0c0c;
+
+}

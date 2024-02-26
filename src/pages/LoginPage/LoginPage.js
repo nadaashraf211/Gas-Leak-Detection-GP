@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './login.css'
 import { Login } from "../../components/Login";
 import { Register } from "../../components/Register";
+import FooterPage from "../FooterPage/FooterPage";
 
 
 const LoginPage = () => {
@@ -12,12 +13,18 @@ const LoginPage = () => {
     }
 
     return (
+
         <div className="LoginPage">
             {
                 currentForm === "Login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+
             }
+            <FooterPage />
+
+
         </div>
     );
+
 }
 
 export default LoginPage

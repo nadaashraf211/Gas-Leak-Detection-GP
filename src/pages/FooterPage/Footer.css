@@ -4,11 +4,16 @@
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: relative;
 }
 
 .social-icons {
     margin-top: 20px;
 }
+
 
 .social-icons a {
     display: inline-block;
@@ -17,9 +22,7 @@
 
 .social-icons img {
     width: 40px;
-    /* Adjust the size according to your preference */
     height: 40px;
-    /* Adjust the size according to your preference */
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
 }
