@@ -19,7 +19,7 @@ const LoginPage = () => {
                 currentForm === "Login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
 
             }
-            <FooterPage />
+            {/* <FooterPage /> */}
 
 
         </div>

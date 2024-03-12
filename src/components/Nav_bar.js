@@ -38,6 +38,7 @@ export const Nav_bar = () => {
     };
 
     return (
+        
         <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
                 <Navbar.Brand href="/">
@@ -81,7 +82,7 @@ export const Nav_bar = () => {
                             </Dropdown.Menu>
                         </Dropdown>
                         <Nav.Link
-                            href="#Profile"
+                            href="/profile"
                             className={activeLink === "Profile" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("Profile")}
                         >
@@ -113,6 +114,7 @@ export const Nav_bar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        
 
     );
 };

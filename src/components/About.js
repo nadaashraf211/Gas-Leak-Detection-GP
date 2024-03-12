@@ -71,7 +71,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <FooterPage />
+            {/* <FooterPage /> */}
         </section>
 
     );

@@ -1,34 +1,98 @@
-.contact {
+/* .contact {
   display: flex;
   min-height: 100vh;
   justify-content: center;
   color: rgb(12, 11, 11);
   font-family: 'Times New Roman', Times, serif;
-  background-image: linear-gradient(79deg, #929563, #E0E0DF, #1E3E2F);
-}
+  
+} */
 
+.breadcrumb-section {
+  padding: 150px 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  padding-top: 200px;
+}
+.breadcrumb-section:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #7b937c;
+  z-index: -1;
+  opacity: 0.8;
+}
+.breadcrumb-text h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  margin-top: 20px;
+}
+/* .breadcrumb-bg {
+  background-image: url('D:\Gas-Leaks-Detection\src\assets\images\breadcrumb-bg.jpg');
+} */
+
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+  width: 47%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+ 
+}
+.contact-form form p input[type=text], .contact-form form p input[type=tel]{
+  margin-right: 10px;
+ 
+}
+.contact-form-wrap {
+  background-color: rgb(237, 243, 238);
+  padding: 45px 30px;
+  border-radius: 5px;
+  color: #284629;
+  margin-top: 60px;
+  text-align: center;
+}
 .contact-us-container {
   display: flex;
   flex-direction: column;
-
+  margin-top: 100px;
+  background-color: #fff;
 
 }
+.contact-form form p textarea {
+  border: 1px solid #ddd;
+  padding: 15px;
+  height: 200px;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+}
 
-@media screen and (min-width: 600px) {
+
+/* @media screen and (min-width: 600px) {
   .contact-us-container {
     padding: 5rem;
     border: 1px solid white;
     border-radius: 10px;
     margin: 5rem;
   }
+} */
+
+
+.sub{
+  background-color: #284629;
+  color: #fff;
 }
-
-
-
 .sub:hover {
-  background-color: rgb(240, 235, 235);
-  color: rgb(18, 17, 17);
+  background-color: #7b937c;
+  color: #fff;
   font-weight: bold;
+  
 }
 
 

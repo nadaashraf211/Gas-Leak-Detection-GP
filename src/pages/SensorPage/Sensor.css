@@ -16,38 +16,92 @@
 
 .Sensor {
     /* background-color: rgb(173 205 127); */
-    margin-left: 80px;
-    margin-right: 80px;
+    /* margin-left: 80px;
+    margin-right: 80px; */
     /* margin-top: 100px; */
     margin-bottom: 100px;
 }
 
+.ser-text{
+    margin-top: 25px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.sensor-h2{
+    font-weight: bold;
+    color: #284628;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: start;
+    
+}
+.sensor-p{
+    color: #6a6767;
+    margin: 20px;
+    text-align: start;
+}
 .Sensor .sensText {
     font-family: 'Times New Roman', Times, serif;
     /* color:#726767; */
-    color: #60774c;
+    color: #284628;
     font-size: 25px;
+    width: auto;
+    
+    
 }
-
+.sensor-logo{
+    width: 40px;
+    height: 40px;
+    float: left; /* Float the image to the left */
+    /* margin-right: 10px; */
+    margin-top: 20px;
+}
+.sensor-text{
+    width: 40%;
+    color: #284628;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    margin-top: 20px;
+    text-align: start;
+}
+.logo-text{
+    color: #6a6767;
+    font: 1em sans-serif;
+}
 .Sensor .form-control {
-    width: 300px;
+    
     /* background-color: #b5c8ac; */
     margin-top: 30px;
+    width: 50%; 
+     margin: 0 auto;
+    text-align: center;
+    align-items: center !important;
 }
 
+.rounded{
+    margin-left: 100px;
+    margin-top: 50px;
+    text-align: center;
+    align-items: center !important;
+}
 
 .Sensor .data {
     margin-top: 50px;
+    align-items: center;
+    text-align: center;
 }
 
-.Sensor .submit {
+.Sensor .sub {
     /* background-color: rgb(41, 40, 40); */
-    background-color: #485935;
+    background-color: #284628;
     color: #fff;
+    width: 50%;
+   
+
 }
 
-.Sensor .submit:hover {
+.Sensor .sub:hover {
     /* background-color: #90a76a; */
-    background-color: #0c0c0c;
+    background-color: #7b937c;
 
 }

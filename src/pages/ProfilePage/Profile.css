@@ -1,0 +1,98 @@
+/* .row.content {height: 450px} */
+    
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  /* background-color: #f1f1f1; */
+  height: 100%;
+}
+@media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+  /* .Profile{
+    padding-top: 47px;
+  } */
+
+  .Rooms{
+    align-items: center;
+    text-align: center;
+    color: #284629;
+    
+  }
+  .Profile .logo{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* margin-left: 150px; */
+    margin: 0 auto;
+    width: 23%;
+  
+  }
+  .history{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #284629;
+    padding-top: 70px;
+  }
+  .history-text{
+    padding-top: 20px;
+  }
+  .active-logo{
+    width: 50px;
+    height: auto;
+  }
+  .Profile .sub{
+    background-color: white;
+    border-color: #284629;
+    border-radius: 5px;
+    border: 2px solid #284629;
+    color: #284629;
+    text-align: center;
+    justify-content: center;
+    width: 70%;
+  }
+  .camera-logo{
+    width: 40px;
+    height: 40px;
+    float: left;
+  }
+  .Profile .sub:hover{
+    width: 75%;
+  }
+  .line{
+    border-color: #000000;
+     margin-top: 20px;
+     border: 1px solid #000000;
+     width: 70%;
+     margin: 0 auto;
+     align-items: center;
+     text-align: center;
+  }
+.sub1 {
+    /* background-color: rgb(41, 40, 40); */
+    background-color: #7b937c;
+    color: #fff;
+    width: 50%;
+   border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+}
+
+.sub1:hover {
+    /* background-color: #90a76a; */
+    background-color: #284629;
+
+}

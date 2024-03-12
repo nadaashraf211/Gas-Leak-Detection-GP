@@ -32,47 +32,70 @@ const ContactUs = () => {
 
     return (
         <section className="contact" id="contact">
-            <div className="contact-us-container">
-                <h2 className="reg">Contact Us</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="name">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            value={formData.name}
+            <div class="breadcrumb-section breadcrumb-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                            <div class="breadcrumb-text">
+                                <h1>Contact us</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* <div class="contact-from-section mt-150 mb-150"> */}
+		<div class="container  mt-150 mb-150">
+			<div class="row">       
+            <div class="col-lg-8">
+            <div id="form_status"></div>
+					<div class="contact-form">
+						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+							<p>
+							<input value={formData.name}
                             onChange={handleChange}
                             required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
+                             type="text" placeholder="Full Name"
+                              name="name" id="name" />
+
+							<input type="email" 
+                            placeholder="Youremail@gmail.com" 
+                            name="email" id="email" 
                             value={formData.email}
                             onChange={handleChange}
-                            required
-                            placeholder="Youremail@gmail.com"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="message">Message:</label>
-                        <textarea
-                            id="message"
-                            name="message"
+                            required/>
+							</p>
+							<p>
+								<input type="tel" placeholder="Phone" name="phone" id="phone" />
+								<input type="text" placeholder="Subject" name="subject" id="subject" />
+							</p>
+							<p><textarea name="message" 
+                            id="message" cols="30" 
+                            rows="10" 
                             value={formData.message}
                             onChange={handleChange}
                             required
-                            placeholder="How can we help you?"
-                        ></textarea>
-                    </div>
-                    <button className="sub" type="submit">Submit</button>
-                </form>
+                            placeholder="Message"></textarea></p>
+							<input type="hidden" name="token" value="FsWga4&@f6aw" />
+							<button className="sub" type="submit">Submit</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="contact-form-wrap">
+						<div class="contact-form-box">
+							<h4><i class="fas fa-map"></i> Address</h4>
+							<p>34/8, East Hukupara <br /> Gifirtok, Sadan. <br /> Egypt</p>
+						</div>
+						<div class="contact-form-box">
+							<h4><i class="fas fa-address-book"></i> Contact</h4>
+							<p>Phone: +00 111 222 3333 <br /> Email: GasDetection@gmail.com</p>
+						</div>
+					</div>
+				</div>
+                </div>
+            
             </div>
+            {/* </div> */}
         </section>
     );
 };

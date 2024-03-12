@@ -15,16 +15,29 @@ import FusionPage from "./pages/FusionPage/FusionPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import SuceessPage from "./pages/SucessPage/SucessPage";
 import FailPage from "./pages/FailPage/FailPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 // import Profile from "./components/Profile";
 class App extends Component {
     render() {
         return (
+            // <div>
+            //     <Nav_bar />
+            //     <HomePage />
+            //     <AboutPage />
+            //     <LoginPage />
+            //     <SensorPage />
+            //     <ThermalPage />
+            //     <FusionPage />
+            //     <ContactUsPage />
+
+            //     </div>
             <Router>
                 <Nav_bar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/home" element={<HomePage />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/services/sensor" element={<SensorPage />} />
                     <Route path="/services/thermalImage" element={<ThermalPage />} />
@@ -34,9 +47,8 @@ class App extends Component {
                     <Route path="*" element={<h2> Page Not Found </h2>} />
                     <Route path="/contact" element={<ContactUsPage />} />
                 </Routes>
+                </Router>
 
-
-            </Router>
 
         );
     }

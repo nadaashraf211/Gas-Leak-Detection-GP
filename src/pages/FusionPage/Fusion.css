@@ -1,9 +1,9 @@
-.Fusion {
-  /* background-color: rgb(173 205 127); */
+/* .Fusion {
+  
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 150px;
-}
+} */
 
 .Fusion .senH {
   color: white;
@@ -27,10 +27,20 @@
   font-family: 'Times New Roman', Times, serif;
   color: #60774c;
   font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .Fusion .form-control {
-  width: 300px;
+  
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
   /* background-color: #b5c8ac; */
 }
 
@@ -71,4 +81,15 @@
 
 .Fusion .submit:hover {
   background-color: #070707;
+}
+
+.Fusion .sub{
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.Fusion .file-input{
+  margin-bottom: 20px;
 }

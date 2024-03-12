@@ -8,23 +8,17 @@ import Alert from "../assets/images/alert.png";
 import addCamera from "../assets/images/addPhoto.png";
 import addSensor from "../assets/images/addSensor.png";
 import { useState } from 'react';
-import Room from './Room';
 
-const Profile = () => {
 
-    const [components, setComponents] = useState([]);
-    const [counter, setCounter] = useState(2);
 
-    const handleAddRoom = () => {
-        setCounter(counter + 1);
-        setComponents([...components, <Room key={counter} counter={counter} />]);
-    };
-    const [numCamera, setNumCamera] = useState(8);
-    const [numSensor, setNumSensor] = useState(8);
+
+const Room = ({ counter }) => {
+    const [numCamera, setNumCamera] = useState(0);
+    const [numSensor, setNumSensor] = useState(0);
     
-    let numActive=5;
-    let alert=2;
-    let room=1;
+    let numActive=0;
+    let alert=0;
+    // let room=2;
     const addcamera = () =>  {  
         setNumCamera(prevNum => prevNum + 1);
     };
@@ -32,25 +26,13 @@ const Profile = () => {
         setNumSensor(prevNum => prevNum + 1);
     };
     return (
-        <section className="Profile" id="Profile">
-            <div class="breadcrumb-section breadcrumb-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2 text-center">
-                            <div class="breadcrumb-text">
-                                <h1>Profile</h1>
-                                <p className='ser-text'>Be aware of your Gas Leakage Remotely with best accuaracy for your safety.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div className='Profile'>
+        <section className="Room" id="Room">
+        <div>
 
         <div class="container-fluid text-center">    
   <div class="row content">
   <div class="Rooms col-sm-3 sidenav mx-auto">
-    <h2>Room {room}</h2>
+    <h2>Room {counter}</h2>
     <div class='row'>
         <div class='logo col-sm-12'>
             <img src={Camera} alt="Logo" className="sensor-logo" />
@@ -67,7 +49,7 @@ const Profile = () => {
 
 
 
-    <div class="history col-sm-6 text-center "> 
+<div class="history col-sm-6 text-center "> 
       <div class='row'>
         <div class='logo col-sm-6'>
         
@@ -103,15 +85,10 @@ const Profile = () => {
     </div>
   </div>
   <hr className='line' />
-  {/* <Room /> */}
-  {components.map(component => component)}
-            <button className="sub1" onClick={handleAddRoom} type="submit">ADD Room</button>
 </div>
-    
-
 
         </div>
         </section>
     )
 }
-export default Profile;
+export default Room;
