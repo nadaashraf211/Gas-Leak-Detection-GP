@@ -1,0 +1,146 @@
+import React, { useState } from "react";
+
+export const Register = (props) => {
+  const [formData, setFormData] = useState({
+    userFirstName: "",
+    userLastName: "",
+    userMail: "",
+    userPhone: "",
+    userBirthday: "",
+    userGender: "",
+    userPassword: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:9000/api/v1/users/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        const err = await response.text();
+        console.log(err);
+        throw new Error("Failed to submit data");
+      }
+      console.log("Data submitted successfully");
+    } catch (error) {
+      console.error("Error submitting data:", error);
+    }
+  };
+
+  return (
+    <section className="register" id="register">
+      <div className="auth-form-container">
+        <h2 className="reg">Register</h2>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <label htmlFor="firstName">First Name</label>
+          <input
+            value={formData.userFirstName}
+            onChange={handleChange}
+            type="text"
+            placeholder="First Name"
+            id="firstName"
+            name="userFirstName"
+          />
+
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            value={formData.userLastName}
+            onChange={handleChange}
+            type="text"
+            placeholder="Last Name"
+            id="lastName"
+            name="userLastName"
+          />
+
+          <label htmlFor="email">Email</label>
+          <input
+            value={formData.userMail}
+            onChange={handleChange}
+            type="email"
+            placeholder="YourEmail@gmail.com"
+            id="email"
+            name="userMail"
+          />
+
+          <label htmlFor="phone">Phone</label>
+          <input
+            value={formData.userPhone}
+            onChange={handleChange}
+            type="tel"
+            placeholder="Phone Number"
+            id="phone"
+            name="userPhone"
+          />
+
+          <label htmlFor="birthdate">Birthdate</label>
+          <input
+            value={formData.userBirthday}
+            onChange={handleChange}
+            type="date"
+            id="birthdate"
+            name="userBirthday"
+          />
+
+          <label htmlFor="gender">Gender</label>
+          <div className="gender-radio">
+            <div>
+              <input
+                type="radio"
+                id="male"
+                name="userGender"
+                value="m"
+                checked={formData.userGender === "m"}
+                onChange={handleChange}
+              />
+              <label htmlFor="male">Male</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="female"
+                name="userGender"
+                value="f"
+                checked={formData.userGender === "f"}
+                onChange={handleChange}
+              />
+              <label htmlFor="female">Female</label>
+            </div>
+            <div></div>
+          </div>
+
+          <label htmlFor="password">Password</label>
+          <input
+            value={formData.userPassword}
+            onChange={handleChange}
+            type="password"
+            placeholder="********"
+            id="password"
+            name="userPassword"
+          />
+
+          <button className="sub" type="submit">
+            Register
+          </button>
+        </form>
+        <button
+          className="link-btn"
+          onClick={() => props.onFormSwitch("Login")}
+        >
+          Already have an account? Login here.
+        </button>
+      </div>
+    </section>
+  );
+};
