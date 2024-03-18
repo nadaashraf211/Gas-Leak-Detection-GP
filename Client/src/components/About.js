@@ -19,6 +19,57 @@ const About = () => {
 
     return (
         <section className="About" id="About">
+            <div class="breadcrumb-section breadcrumb-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                            <div class="breadcrumb-text">
+                                <h1>OverView</h1>
+                                <p className='ser-text'>
+                                    Here's what we are
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+
+                <div class="row">
+                    <div class="over-text col-sm-4 p-3 ">
+                        <h1>We're taking action for the planet</h1>
+                    </div>
+                    <div class="over-p col-sm-8 p-3 ">
+                        <p>gas leak detection is a vital tool in promoting environmental sustainability. It helps in the reduction of greenhouse gases,
+                            conservation of natural resources, protection of ecosystems, improvement of air quality, and prevention of environmental disasters.
+                            By ensuring that gas leaks are detected and addressed promptly,
+                            we can make significant strides towards a more sustainable and environmentally friendly future.</p>
+                    </div>
+                    <hr className='line' />
+                </div>
+                <div class="row">
+                    <div class="number col-sm-8 p-3 ">
+                    <div class="number col-sm-4 p-3 ">
+                        <div class="checkmark-circle">
+                            <i class="checkmark">1</i>
+                        </div>
+                        </div>
+                        <div class="col-sm-8 p-3 ">
+                        <p>
+                        Mitigation of Climate Change:
+                        </p>
+                        </div>
+                    </div>
+                    <div class="over-p col-sm-4 p-3 ">
+                        <p>gas leak detection is a vital tool in promoting environmental sustainability. It helps in the reduction of greenhouse gases,
+                            conservation of natural resources, protection of ecosystems, improvement of air quality, and prevention of environmental disasters.
+                            By ensuring that gas leaks are detected and addressed promptly,
+                            we can make significant strides towards a more sustainable and environmentally friendly future.</p>
+                    </div>
+                    <hr className='line' />
+                </div>
+            </div>
+
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 mx-auto">

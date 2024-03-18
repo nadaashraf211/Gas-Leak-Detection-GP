@@ -1,5 +1,30 @@
 /* About.css */
 
+
+.over-text{
+
+    color: #284629;
+
+}
+.over-p{
+    color: #6a6767;
+    text-align: left;
+}
+.number .checkmark-circle {
+    width: 20%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 20px auto; */
+    background-color: #284629;
+}
+.number .checkmark {
+    color: #fff;
+    font-size: 30px;
+}
+
 .carousel-image {
 
     /* width: 600px; */
@@ -23,7 +48,7 @@
     background-position: center;
     text-align: center;
     position: relative;
-    background-color: #dde0da;
+    background-color: white;
     /* background-image: linear-gradient(50deg, #b4b7b6, #bfbfaf, #eaeeca); */
     /* Adjust the alpha value (0.5 in this case) for transparency */
     left: 0;

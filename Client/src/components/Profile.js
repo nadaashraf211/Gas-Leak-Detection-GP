@@ -38,7 +38,7 @@ const Profile = () => {
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2 text-center">
                             <div class="breadcrumb-text">
-                                <h1>Profile</h1>
+                                <h1>Dashboard</h1>
                                 <p className='ser-text'>Be aware of your Gas Leakage Remotely with best accuaracy for your safety.</p>
                             </div>
                         </div>

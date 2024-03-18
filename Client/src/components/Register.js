@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SuceessPage from "../pages/SucessPage/SucessPage";
+import FailLogin from "../pages/SucessPage/FailLogin";
 
 export const Register = (props) => {
   const [formData, setFormData] = useState({
@@ -10,7 +12,8 @@ export const Register = (props) => {
     userGender: "",
     userPassword: "",
   });
-
+  const [successCard, setSuccessCard] = useState(false);
+  const [errorCard, setErrorCard] = useState(false);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,8 +37,10 @@ export const Register = (props) => {
         throw new Error("Failed to submit data");
       }
       console.log("Data submitted successfully");
+      setSuccessCard(true); // Show success card
     } catch (error) {
       console.error("Error submitting data:", error);
+      setErrorCard(true);
     }
   };
 
@@ -43,7 +48,7 @@ export const Register = (props) => {
     <section className="register" id="register">
       <div className="auth-form-container">
         <h2 className="reg">Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
+        <form className="register-form" onSubmit={handleSubmit} >
           <label htmlFor="firstName">First Name</label>
           <input
             value={formData.userFirstName}
@@ -133,7 +138,18 @@ export const Register = (props) => {
           <button className="sub" type="submit">
             Register
           </button>
+
         </form>
+        {successCard && (
+        <div className="success-card">
+          <SuceessPage></SuceessPage>
+        </div>)}
+        {errorCard && (
+        <div className="error-card">
+          <FailLogin></FailLogin>
+          <button className="btn" onClick={() => setErrorCard(false)}>Retry</button>
+        </div>
+      )}
         <button
           className="link-btn"
           onClick={() => props.onFormSwitch("Login")}
