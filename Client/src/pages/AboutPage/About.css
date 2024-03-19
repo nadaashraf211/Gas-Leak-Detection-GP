@@ -9,9 +9,7 @@
 .over-p{
     color: #6a6767;
     text-align: left;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
     font-family: 'Times New Roman', Times, serif;
 }
 .over-h{
@@ -25,16 +23,10 @@
 .number .checkmark-circle {
     width: 50px;
     height: 50px;
-=======
->>>>>>> Stashed changes
 }
 .number .checkmark-circle {
     width: 20%;
     height: 50%;
-<<<<<<< Updated upstream
-=======
->>>>>>> e003f18e803f461bb60ad547cf9fe52e2383f9f2
->>>>>>> Stashed changes
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -45,13 +37,9 @@
 .number .checkmark {
     color: #fff;
     font-size: 30px;
-<<<<<<< Updated upstream
 }
 
-=======
-<<<<<<< HEAD
-    align-items: end;
-}
+
 .over-data{
     width: 70%;
     align-items: start;
@@ -70,11 +58,8 @@
     padding: 0;
     margin: 0;
 }
-=======
-}
 
->>>>>>> e003f18e803f461bb60ad547cf9fe52e2383f9f2
->>>>>>> Stashed changes
+
 .carousel-image {
 
     /* width: 600px; */

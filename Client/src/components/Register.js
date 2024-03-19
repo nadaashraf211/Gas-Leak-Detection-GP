@@ -38,9 +38,11 @@ export const Register = (props) => {
       }
       console.log("Data submitted successfully");
       setSuccessCard(true); // Show success card
+      setErrorCard(false);
     } catch (error) {
       console.error("Error submitting data:", error);
       setErrorCard(true);
+      setSuccessCard(false); // Show success card
     }
   };
 
@@ -48,7 +50,7 @@ export const Register = (props) => {
     <section className="register" id="register">
       <div className="auth-form-container">
         <h2 className="reg">Register</h2>
-        <form className="register-form" onSubmit={handleSubmit} >
+        <form className="register-form" onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name</label>
           <input
             value={formData.userFirstName}
@@ -138,18 +140,20 @@ export const Register = (props) => {
           <button className="sub" type="submit">
             Register
           </button>
-
         </form>
         {successCard && (
-        <div className="success-card">
-          <SuceessPage></SuceessPage>
-        </div>)}
+          <div className="success-card">
+            <SuceessPage></SuceessPage>
+          </div>
+        )}
         {errorCard && (
-        <div className="error-card">
-          <FailLogin></FailLogin>
-          <button className="btn" onClick={() => setErrorCard(false)}>Retry</button>
-        </div>
-      )}
+          <div className="error-card">
+            <FailLogin></FailLogin>
+            <button className="btn" onClick={() => setErrorCard(false)}>
+              Retry
+            </button>
+          </div>
+        )}
         <button
           className="link-btn"
           onClick={() => props.onFormSwitch("Login")}

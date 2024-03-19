@@ -58,8 +58,8 @@ exports.saveUserData = async (req, res) => {
       hashedPassword,
       createdOn,
     ];
-    var saveUserDataQuery = queries.queryList.SAVE_USER_DATA_QUERY;
-    await dbconnection.dbQuery(saveUserDataQuery, values);
+    //var saveUserDataQuery = queries.queryList.SAVE_USER_DATA_QUERY;
+    //await dbconnection.dbQuery(saveUserDataQuery, values);
     return res.status(201).send("Successfully save user's data");
   } catch (err) {
     console.log("Error : " + err);
@@ -67,49 +67,42 @@ exports.saveUserData = async (req, res) => {
   }
 };
 
-exports.login=async(req,res)=>{
-try{
- var userMail= req.body.userMail;
- var userPassword=req.body.userPassword;
-
- if (
-  !userMail ||
-  !userPassword
-) {
-  return res.status(500).send({
-    error:
-      "Mail and Password should not be empty",
-  });
- }
-  var get_UsersEmailPass_Query=queries.queryList.GET_USERS_MAILS_PASS_QUERY;
-  var result = await dbconnection.dbQuery(get_UsersEmailPass_Query,[userMail]);
-  if(result.rows.length==0){
-    return res.status(500).send({
-      error:"Mail not found",
-    });
-  }
+exports.login = async (req, res) => {
+  try {
+    var userMail = req.query.userMail;
+    var userPassword = req.query.userPassword;
+    console.log(userMail);
+    console.log(userPassword);
+    if (!userMail || !userPassword) {
+      return res.status(500).send({
+        error: "Mail and Password should not be empty",
+      });
+    }
+    var get_UsersEmailPass_Query = queries.queryList.GET_USERS_MAILS_PASS_QUERY;
+    var result = await dbconnection.dbQuery(get_UsersEmailPass_Query, [
+      userMail,
+    ]);
+    if (result.rows.length == 0) {
+      return res.status(500).send({
+        error: "Mail not found",
+      });
+    }
     const email = result.rows.map((row) => row.user_mail);
     const password = result.rows.map((row) => row.user_password);
- 
 
-   const saltRounds = 10;
-   const hashedPassword = await bcrypt.hash(userPassword, saltRounds);
-   const isPassMatch=await bcrypt.compare(userPassword,password[0]);
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(userPassword, saltRounds);
+    const isPassMatch = await bcrypt.compare(userPassword, password[0]);
 
-
-  if(isPassMatch){
-    return res.status(200).send(
-      "Successfully Found",
-    );
-  }else{
-    return res.status(500).send({
-     error:"Incorrect Password",
-    });
+    if (isPassMatch) {
+      return res.status(200).send("Successfully Found");
+    } else {
+      return res.status(500).send({
+        error: "Incorrect Password",
+      });
+    }
+  } catch (err) {
+    console.log("Error : " + err);
+    return res.status(500).send({});
   }
-
-
-}catch(err){
-  console.log("Error : "+err);
-  return res.status(500).send({});
-}
 };
