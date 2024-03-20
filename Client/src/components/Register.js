@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { useEffect } from "react";
 import SuceessPage from "../pages/SucessPage/SucessPage";
 import FailLogin from "../pages/SucessPage/FailLogin";
@@ -42,8 +42,11 @@ export const Register = (props) => {
         throw new Error("Failed to submit data");
       }
       console.log("Data submitted successfully");
-      setSuccessMessage("Account Created Successfully!.");
+      setSuccessMessage("Account Created Successfully! please login your account.");
       setErrorMessage(null);
+      setTimeout(() => {
+        props.onFormSwitch("Login"); // Switch to the login form after 5 seconds
+      }, 3000);
     } catch (error) {
       console.error("Error submitting data:", error);
       setErrorMessage("There was an error submitting your data.");
@@ -154,7 +157,7 @@ export const Register = (props) => {
           {successMessage && (
             <div className="alert alert-success" role="alert">
               {successMessage}
-              <button className="sub" onClick={()=>x("/login")} >go back</button>
+              {/* <button className="sub" type="button" onClick={() => props.onFormSwitch("Login")} >OK</button>    */}
             </div>
           )}
           {errorMessage && (
