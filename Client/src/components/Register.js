@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import SuceessPage from "../pages/SucessPage/SucessPage";
 import FailLogin from "../pages/SucessPage/FailLogin";
@@ -17,6 +18,7 @@ export const Register = (props) => {
   // const [errorCard, setErrorCard] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
+  const x=useNavigate()
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -152,6 +154,7 @@ export const Register = (props) => {
           {successMessage && (
             <div className="alert alert-success" role="alert">
               {successMessage}
+              <button className="sub" onClick={()=>x("/login")} >go back</button>
             </div>
           )}
           {errorMessage && (
