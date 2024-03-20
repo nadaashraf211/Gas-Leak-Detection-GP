@@ -9,9 +9,10 @@ import addCamera from "../assets/images/addPhoto.png";
 import addSensor from "../assets/images/addSensor.png";
 import { useState } from 'react';
 import Room from './Room';
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-
+    const x=useNavigate()
     const [components, setComponents] = useState([]);
     const [counter, setCounter] = useState(2);
 
@@ -38,7 +39,7 @@ const Profile = () => {
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2 text-center">
                             <div class="breadcrumb-text">
-                                <h1>Profile</h1>
+                                <h1>Dashboard</h1>
                                 <p className='ser-text'>Be aware of your Gas Leakage Remotely with best accuaracy for your safety.</p>
                             </div>
                         </div>
@@ -103,11 +104,18 @@ const Profile = () => {
     </div>
   </div>
   <hr className='line' />
-  {/* <Room /> */}
+  <div className='row>'>
   {components.map(component => component)}
             <button className="sub1" onClick={handleAddRoom} type="submit">ADD Room</button>
+            </div>
+            <div className='row>'>
+            <button className="sub1" onClick={()=>x("/login")} type="submit">Logout</button>
+            </div>
+            
 </div>
-    
+
+
+
 
 
         </div>

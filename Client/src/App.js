@@ -14,6 +14,7 @@ import ThermalPage from "./pages/ThermalPage/ThermalPage";
 import FusionPage from "./pages/FusionPage/FusionPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import SuceessPage from "./pages/SucessPage/SucessPage";
+import FailLogin from "./pages/SucessPage/FailLogin";
 import FailPage from "./pages/FailPage/FailPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
@@ -46,6 +47,8 @@ class App extends Component {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="*" element={<h2> Page Not Found </h2>} />
                     <Route path="/contact" element={<ContactUsPage />} />
+                    <Route path="/sucessLogin" element={<SuceessPage />} />
+                    <Route path="/failLogin" element={<FailLogin />} />
                 </Routes>
                 </Router>
 

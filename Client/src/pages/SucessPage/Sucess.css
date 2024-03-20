@@ -1,6 +1,23 @@
+ 
+ .Sucess .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .success-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #284629;
+  }
+  
 
 .Sucess{
-    margin-top: 150px;
+    padding-top: 150px;
 }
 /* .modal-content {
     max-width: 400px;
@@ -16,15 +33,12 @@
     color: #f2f2f2;
     
 }
-.Sucess .modal-body .txt{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
-}
+
 .modal-footer {
     border-top: 0;
     justify-content: center;
 }
-.checkmark-circle {
+ .Sucess .checkmark-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -32,21 +46,23 @@
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    background-color: #f2f2f2;
+    background-color: #284629;
 }
-.checkmark {
-    color: #4BB543;
+.Sucess .checkmark {
+    color: #fff;
     font-size: 30px;
 }
 .Sucess .btn {
-    background-color: #4BB543;
+    background-color: #7b937c;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .Sucess .btn:hover{
-    background-color: #b8c690;
+    background-color: #284629;
 }

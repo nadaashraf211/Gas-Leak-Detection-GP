@@ -62,7 +62,7 @@ export const Nav_bar = () => {
                             onClick={() => onUpdateActiveLink("About")}
 
                         >
-                            About
+                            Overview
                         </Nav.Link>
                         <Dropdown className="serve"
                             show={showDropdown}
@@ -86,7 +86,7 @@ export const Nav_bar = () => {
                             className={activeLink === "Profile" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("Profile")}
                         >
-                            Profile
+                            Dashboard
                         </Nav.Link>
                         <Nav.Link
                             href="/login"

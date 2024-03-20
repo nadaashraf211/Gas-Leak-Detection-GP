@@ -96,3 +96,21 @@
     background-color: #284629;
 
 }
+.log-out {
+  background-color: #7b937c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.log-out:hover{
+  background-color: #284629;
+}

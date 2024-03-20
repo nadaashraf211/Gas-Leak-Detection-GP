@@ -30,7 +30,7 @@ const Fusion = () => {
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2 text-center">
                             <div class="breadcrumb-text">
-                                <h1>Our Services</h1>
+                                <h1>Fusion System</h1>
                                 <p className='ser-text'>In addition to our hardware and software solutions,
                                     We offers a full suite of services that support your leak monitoring and detection goals with the best accuracy to save life and enviroment.</p>
                             </div>

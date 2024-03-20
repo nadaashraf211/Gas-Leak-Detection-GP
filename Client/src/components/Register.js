@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {  useEffect } from 'react';
+import SuceessPage from "../pages/SucessPage/SucessPage";
+import FailLogin from "../pages/SucessPage/FailLogin";
 
 export const Register = (props) => {
   const [formData, setFormData] = useState({
@@ -10,7 +13,10 @@ export const Register = (props) => {
     userGender: "",
     userPassword: "",
   });
-
+  // const [successCard, setSuccessCard] = useState(false);
+  // const [errorCard, setErrorCard] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,16 +40,30 @@ export const Register = (props) => {
         throw new Error("Failed to submit data");
       }
       console.log("Data submitted successfully");
+      setSuccessMessage("Login Successful!.");
+      setErrorMessage(null);
     } catch (error) {
       console.error("Error submitting data:", error);
+      setErrorMessage("There was an error submitting your data.");
+      setSuccessMessage(null);
     }
   };
+
+  // useEffect(() => {
+  //   if (successCard) {
+  //     window.open('/sucessLogin', '_blank');
+  //   }
+  //   if (errorCard) {
+  //     window.open('/failLogin', '_blank');
+      
+  //   }
+  // }, [successCard, errorCard]);
 
   return (
     <section className="register" id="register">
       <div className="auth-form-container">
         <h2 className="reg">Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
+        <form className="register-form" onSubmit={handleSubmit} >
           <label htmlFor="firstName">First Name</label>
           <input
             value={formData.userFirstName}
@@ -129,11 +149,24 @@ export const Register = (props) => {
             id="password"
             name="userPassword"
           />
-
+          {successMessage && (
+        <div className="alert alert-success" role="alert">
+          {successMessage}
+        </div>
+      )}
+ {errorMessage && (
+        <div className="alert alert-danger" role="alert">
+          {errorMessage}
+          <button className="sub" onClick={() => setErrorMessage(null)}>Retry</button>
+        </div>
+      )}
           <button className="sub" type="submit">
             Register
           </button>
+
         </form>
+        
+      
         <button
           className="link-btn"
           onClick={() => props.onFormSwitch("Login")}

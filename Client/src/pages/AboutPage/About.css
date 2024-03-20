@@ -1,5 +1,57 @@
 /* About.css */
 
+
+.over-text{
+
+    color: #284629;
+
+}
+.over-p{
+    color: #6a6767;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+}
+.over-h{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    color: #284629;
+    margin-top: 15px;
+    font-weight: bold;
+    
+}
+.number .checkmark-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 20px auto; */
+    background-color: #284629;
+}
+.number .checkmark {
+    color: #fff;
+    font-size: 30px;
+    align-items: end;
+}
+.over-data{
+    width: 70%;
+    align-items: start;
+    text-align: left;
+    color: #284629;
+    font: 1em sans-serif;
+}
+
+.over-img{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.over-img .rounded{
+    margin-top: 0;
+    padding: 0;
+    margin: 0;
+}
 .carousel-image {
 
     /* width: 600px; */
@@ -23,7 +75,7 @@
     background-position: center;
     text-align: center;
     position: relative;
-    background-color: #dde0da;
+    background-color: white;
     /* background-image: linear-gradient(50deg, #b4b7b6, #bfbfaf, #eaeeca); */
     /* Adjust the alpha value (0.5 in this case) for transparency */
     left: 0;
@@ -43,4 +95,32 @@
 .col-lg-8 {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.team{
+    text-align: center;
+    color: #284629;
+    margin-top: 20px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .card-body .btn {
+    background-color: #7b937c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.card-body .btn:hover{
+    background-color: #284629;
 }
