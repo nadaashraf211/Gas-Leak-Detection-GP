@@ -18,7 +18,7 @@ export const Register = (props) => {
   // const [errorCard, setErrorCard] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
-  const x=useNavigate()
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -42,7 +42,9 @@ export const Register = (props) => {
         throw new Error("Failed to submit data");
       }
       console.log("Data submitted successfully");
-      setSuccessMessage("Account Created Successfully! please login your account.");
+      setSuccessMessage(
+        "Account Created Successfully! please login your account."
+      );
       setErrorMessage(null);
       setTimeout(() => {
         props.onFormSwitch("Login"); // Switch to the login form after 5 seconds
