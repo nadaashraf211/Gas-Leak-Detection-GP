@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sensor from "../../components/Sensor";
-import './Sensor.css'
+import axios from "axios";
+import "./Sensor.css";
 
 import FooterPage from "../FooterPage/FooterPage";
 
-
 const SensorPage = () => {
-    return (
-        <div>
-            < Sensor />
-            <FooterPage />
-
-
-        </div>
-    )
-}
+  return (
+    <div>
+      <Sensor />
+      <FooterPage />
+    </div>
+  );
+};
 export default SensorPage;

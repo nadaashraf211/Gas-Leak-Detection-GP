@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useEffect } from "react";
 import SuceessPage from "../pages/SucessPage/SucessPage";
@@ -48,7 +49,7 @@ export const Register = (props) => {
       setErrorMessage(null);
       setTimeout(() => {
         props.onFormSwitch("Login"); // Switch to the login form after 5 seconds
-      }, 3000);
+      }, 1000);
     } catch (error) {
       console.error("Error submitting data:", error);
       setErrorMessage("There was an error submitting your data.");

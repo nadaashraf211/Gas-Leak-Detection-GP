@@ -16,21 +16,24 @@ export const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = new URL("http://localhost:9000/api/v1/users/login");
-      url.searchParams.append("userMail", loginData.userMail);
-      url.searchParams.append("userPassword", loginData.userPassword);
-      const response = await fetch(url.toString(), {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const baseurl = new URL("http://localhost:9000/api/v1/users/login");
+      const queryParams = new URLSearchParams({
+        userMail: loginData.userMail,
+        userPassword: loginData.userPassword,
       });
-      if (!response.ok) {
-        const err = await response.text();
+      const url = `${baseurl}?${queryParams}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data.Login) {
+        console.log("Logged in successfully");
+        setTimeout(() => {
+          props.onFormSwitch("Login");
+        }, 500);
+      } else {
+        const err = data.text;
         console.log(err);
         throw new Error("Data is incorrect");
       }
-      console.log("Logged in successfully");
     } catch (error) {
       console.error("Error submitting data:", error);
     }

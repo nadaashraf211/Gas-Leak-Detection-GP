@@ -1,9 +1,22 @@
 var express = require("express");
+const session = require("express-session");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var userRoute = require("./route/user.route");
 
 var app = express();
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 1000 * 60 * 60,
+    },
+  })
+);
+
 app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));

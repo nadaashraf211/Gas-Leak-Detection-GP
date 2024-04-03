@@ -1,6 +1,7 @@
 var queries = require("../db/queries");
 var dbconnection = require("../db/connection");
 const bcrypt = require("bcrypt");
+const session = require("express-session");
 
 exports.saveUserData = async (req, res) => {
   try {
@@ -95,14 +96,21 @@ exports.login = async (req, res) => {
     const isPassMatch = await bcrypt.compare(userPassword, password[0]);
 
     if (isPassMatch) {
-      return res.status(200).send("Successfully Found");
+      req.session.userMail = userMail;
+      return res.json({ Login: true, userMail: req.session.userMail });
     } else {
-      return res.status(500).send({
-        error: "Incorrect Password",
-      });
+      return res.json({ Login: false });
     }
   } catch (err) {
     console.log("Error : " + err);
-    return res.status(500).send({});
+    return res.json({ Login: false });
+  }
+};
+
+exports.Check = async (req, res) => {
+  if (req.session.userMail) {
+    return res.json({ valid: true, userMail: req.session.userMail });
+  } else {
+    return res.json({ valid: false });
   }
 };
