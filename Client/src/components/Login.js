@@ -26,9 +26,6 @@ export const Login = (props) => {
       const data = await response.json();
       if (data.Login) {
         console.log("Logged in successfully");
-        setTimeout(() => {
-          props.onFormSwitch("Login");
-        }, 500);
       } else {
         const err = data.text;
         console.log(err);
