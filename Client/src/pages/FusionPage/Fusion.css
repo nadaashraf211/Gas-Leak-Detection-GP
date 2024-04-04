@@ -91,5 +91,11 @@
   margin-bottom: 50px;
 }
 .Fusion .file-input{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+.Fusion .sdata{
+  color: #686363;
+  /* text-align: center; */
+  padding-left: 25%;
+  font-family: 'Times New Roman', Times, serif;
 }

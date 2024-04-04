@@ -103,9 +103,12 @@ const Fusion = () => {
                             <p className='sensText'> Please input your ThermalImage and sensor measurments to detect leakage with best accuaracy: </p>
                             {/* <label for="inputExample">Example Input</label> */}
                             <form onSubmit={handleSubmit}>
-                                <input type="text" className="form-control form-control-lg" id="inputExample" placeholder="Enter sensor measurements"></input>
+                                {/* <input type="text" className="form-control form-control-lg" id="inputExample" placeholder="Enter sensor measurements"></input> */}
+                                <p className='sdata'>sensor measurments: </p>
                                 <input className='file-input' type="file" accept="image/*" onChange={handleImageChange} />
-                                <button className="sub" type="submit">Upload the image</button>
+                                <p className='sdata'>thermal image: </p>
+                                <input className='file-input' type="file" accept="image/*" onChange={handleImageChange} />
+                                {/* <button className="sub" type="submit">Upload the image</button> */}
                                 <button className="sub" type="submit">Submit all</button>
                                 
                             </form>

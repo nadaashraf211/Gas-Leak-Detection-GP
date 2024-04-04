@@ -108,9 +108,9 @@ const Profile = () => {
   {components.map(component => component)}
             <button className="sub1" onClick={handleAddRoom} type="submit">ADD Room</button>
             </div>
-            <div className='row>'>
+            {/* <div className='row>'>
             <button className="sub1" onClick={()=>x("/login")} type="submit">Logout</button>
-            </div>
+            </div> */}
             
 </div>
 

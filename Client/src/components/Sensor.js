@@ -5,8 +5,20 @@ import industrial from "../assets/images/industrial.png";
 import home from "../assets/images/home.png";
 import Safety from "../assets/images/safety.png";
 import forest from "../assets/images/forest.png";
+import React, { useState } from 'react';
 
 const Sensor = () => {
+    const [image, setImage] = useState(null);
+
+    const handleImageChange = (e) => {
+        const selectedImage = e.target.files[0];
+        setImage(selectedImage);
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle image submission logic here, such as sending the image to a server
+        console.log("Submitted image:", image);
+    };
 
     return (
         <section className="Sensor" id="Sensor">
@@ -80,10 +92,16 @@ const Sensor = () => {
 
                     <div className="data col-sm-12 ">
                         <p className='sensText'> Please input your sensor measurments to detect leakage with best accuaracy :</p>
-                        {/* <label for="inputExample">Example Input</label> */}
+                        {/* <label for="inputExample">Example Input</label>
                         <input type="text" className="form-control form-control-lg" id="inputExample" placeholder="Enter Sensor measurments"></input>
                         {/* <button type="button" className="btn1 btn btn-outline-dark align-items-center">Submit</button> */}
-                        <button className="sub" type="submit">Submit</button>
+                        {/* <button className="sub" type="submit">Submit</button> */} 
+                        <form onSubmit={handleSubmit}>
+                            <input className='file-input' type="file" accept="image/*" onChange={handleImageChange} />
+                            <button className="sub" type="submit">Upload</button>
+                            {/* <input className='upload' type="submit" value="Upload" /> */}
+                        </form>
+
                     </div>
                 </div>
             </div>

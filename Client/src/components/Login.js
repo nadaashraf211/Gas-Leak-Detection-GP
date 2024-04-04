@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { Nav_bar } from "./Nav_bar";
 
 export const Login = (props) => {
   const [loginData, setLoginData] = useState({
     userMail: "",
     userPassword: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setLoginData({
@@ -24,15 +27,20 @@ export const Login = (props) => {
       const url = `${baseurl}?${queryParams}`;
       const response = await fetch(url);
       const data = await response.json();
+      
       if (data.Login) {
         console.log("Logged in successfully");
+        navigate('/profile', { state: { loginSuccessful: true } });
       } else {
         const err = data.text;
         console.log(err);
         throw new Error("Data is incorrect");
+       
       }
     } catch (error) {
       console.error("Error submitting data:", error);
+     
+      
     }
   };
   return (

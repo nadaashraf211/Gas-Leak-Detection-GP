@@ -1,14 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import { BrowserRouter as Router } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from "../pages/LoginPage/LoginPage";
+import { useLocation } from 'react-router-dom';
+// import { AuthContext } from '../pages/LoginPage/LoginPage';
 
 export const Nav_bar = () => {
     const [activeLink, setActiveLink] = useState("");
     const [scrolled, setScrolled] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
+    const location = useLocation();
+  const { loginSuccessful } = location.state || { loginSuccessful: false };
+  
+    // const { isLoggedIn } = useContext(AuthContext);
     // const style1 = ( { isActive }) => {
     //     return {
     //         color : isActive ? "#005490" : "#fff" ,
@@ -63,8 +69,8 @@ export const Nav_bar = () => {
 
                         >
                             Overview
-                        </Nav.Link>
-                        <Dropdown className="serve"
+                         </Nav.Link>
+                         {loginSuccessful &&  <Dropdown className="serve"
                             show={showDropdown}
                             onMouseEnter={() => setShowDropdown(true)}
                             onMouseLeave={() => setShowDropdown(false)}
@@ -80,21 +86,29 @@ export const Nav_bar = () => {
                                 <Dropdown.Item href="/services/thermalImage">Thermal Camera</Dropdown.Item>
                                 <Dropdown.Item href="/services/fusion">Fusion</Dropdown.Item>
                             </Dropdown.Menu>
-                        </Dropdown>
-                        <Nav.Link
+                        </Dropdown>}
+                        {loginSuccessful && <Nav.Link
                             href="/profile"
                             className={activeLink === "Profile" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("Profile")}
                         >
-                            Dashboard
-                        </Nav.Link>
-                        <Nav.Link
+                            Dashboard 
+                        </Nav.Link>}
+                      {!loginSuccessful && <Nav.Link
                             href="/login"
                             className={activeLink === "Login" ? "active navbar-link" : "navbar-link"}
                             onClick={() => onUpdateActiveLink("Login")}
                         >
                             Login
-                        </Nav.Link>
+                        </Nav.Link>}
+                       {loginSuccessful && <Nav.Link
+                            href="/login"
+                            className={activeLink === "Login" ? "active navbar-link" : "navbar-link"}
+                            onClick={() => onUpdateActiveLink("Login")}
+
+                        >
+                            Logout
+                        </Nav.Link>}
                         {/* <Nav.Link
                                 href="#Register"
                                 className={activeLink === "Register" ? "active navbar-link" : "navbar-link"}
