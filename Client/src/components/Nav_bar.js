@@ -7,12 +7,17 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import { useLocation } from 'react-router-dom';
 // import { AuthContext } from '../pages/LoginPage/LoginPage';
 
-export const Nav_bar = () => {
+export const Nav_bar = ({ isLoggedIn, onLogout }) => {
     const [activeLink, setActiveLink] = useState("");
     const [scrolled, setScrolled] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
+
+// If loginSuccessful is not set or is set to null, set it to true
+
     const location = useLocation();
   const { loginSuccessful } = location.state || { loginSuccessful: false };
+  
+
   
     // const { isLoggedIn } = useContext(AuthContext);
     // const style1 = ( { isActive }) => {
@@ -101,14 +106,7 @@ export const Nav_bar = () => {
                         >
                             Login
                         </Nav.Link>}
-                       {loginSuccessful && <Nav.Link
-                            href="/login"
-                            className={activeLink === "Login" ? "active navbar-link" : "navbar-link"}
-                            onClick={() => onUpdateActiveLink("Login")}
-
-                        >
-                            Logout
-                        </Nav.Link>}
+                     
                         {/* <Nav.Link
                                 href="#Register"
                                 className={activeLink === "Register" ? "active navbar-link" : "navbar-link"}
@@ -124,6 +122,18 @@ export const Nav_bar = () => {
                         >
                             Contact
                         </Nav.Link>
+                        {loginSuccessful && <Nav.Link
+                            href="/login"
+                            className={activeLink === "Login" ? "active navbar-link" : "navbar-link"}
+                            onClick={() => 
+                                {
+                                    onUpdateActiveLink("Login")
+                                    loginSuccessful=false
+                                }}
+
+                        >
+                            Logout
+                        </Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

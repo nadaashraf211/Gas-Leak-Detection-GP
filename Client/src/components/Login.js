@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Nav_bar } from "./Nav_bar";
 
 export const Login = (props) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginData, setLoginData] = useState({
     userMail: "",
     userPassword: "",
   });
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  useEffect(() => {
+    // Initialize or check authentication status here
+  }, []);
 
   const handleChange = (e) => {
     setLoginData({
@@ -30,21 +34,40 @@ export const Login = (props) => {
       
       if (data.Login) {
         console.log("Logged in successfully");
-        navigate('/profile', { state: { loginSuccessful: true } });
+        // navigate('/profile', { state: { loginSuccessful: true } });
+        // useEffect(() => {
+       
+        //   const userLoggedIn =data.Login;
+        //   setIsLoggedIn(userLoggedIn);
+        // }, []);
+        setIsLoggedIn(true);
       } else {
         const err = data.text;
         console.log(err);
+        console.log("not Logged in");
         throw new Error("Data is incorrect");
        
       }
     } catch (error) {
+      console.log("catch error");
       console.error("Error submitting data:", error);
      
-      
     }
   };
+  const handleLogout = () => {
+    // Perform logout operations here
+    setIsLoggedIn(false); // Update the login state
+  };
   return (
-    <section className="Login" id="Login">
+    <section className="Login" id="Login"> 
+    <div>
+      {/* <Nav_bar isLoggedIn={isLoggedIn} onLogout={handleLogout} /> */}
+      {/* Only show login form if not logged in
+      {!isLoggedIn && (
+        <LoginForm onLogin={handleSubmit} loginData={loginData} setLoginData={setLoginData} />
+      )} */}
+    </div>
+    
       <div className="auth-form-container">
         <h2 className="reg">Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
