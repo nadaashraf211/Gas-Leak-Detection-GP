@@ -59,8 +59,8 @@ exports.saveUserData = async (req, res) => {
       hashedPassword,
       createdOn,
     ];
-    //var saveUserDataQuery = queries.queryList.SAVE_USER_DATA_QUERY;
-    //await dbconnection.dbQuery(saveUserDataQuery, values);
+    var saveUserDataQuery = queries.queryList.SAVE_USER_DATA_QUERY;
+    await dbconnection.dbQuery(saveUserDataQuery, values);
     return res.status(201).send("Successfully save user's data");
   } catch (err) {
     console.log("Error : " + err);

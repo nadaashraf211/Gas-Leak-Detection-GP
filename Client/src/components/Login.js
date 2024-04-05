@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Nav_bar } from "./Nav_bar";
 
 export const Login = (props) => {
@@ -28,15 +28,17 @@ export const Login = (props) => {
         userMail: loginData.userMail,
         userPassword: loginData.userPassword,
       });
+      console.log(loginData.userMail);
+      console.log(loginData.userPassword);
       const url = `${baseurl}?${queryParams}`;
       const response = await fetch(url);
       const data = await response.json();
-      
+
       if (data.Login) {
         console.log("Logged in successfully");
         // navigate('/profile', { state: { loginSuccessful: true } });
         // useEffect(() => {
-       
+
         //   const userLoggedIn =data.Login;
         //   setIsLoggedIn(userLoggedIn);
         // }, []);
@@ -46,12 +48,10 @@ export const Login = (props) => {
         console.log(err);
         console.log("not Logged in");
         throw new Error("Data is incorrect");
-       
       }
     } catch (error) {
       console.log("catch error");
       console.error("Error submitting data:", error);
-     
     }
   };
   const handleLogout = () => {
@@ -59,15 +59,15 @@ export const Login = (props) => {
     setIsLoggedIn(false); // Update the login state
   };
   return (
-    <section className="Login" id="Login"> 
-    <div>
-      {/* <Nav_bar isLoggedIn={isLoggedIn} onLogout={handleLogout} /> */}
-      {/* Only show login form if not logged in
+    <section className="Login" id="Login">
+      <div>
+        {/* <Nav_bar isLoggedIn={isLoggedIn} onLogout={handleLogout} /> */}
+        {/* Only show login form if not logged in
       {!isLoggedIn && (
         <LoginForm onLogin={handleSubmit} loginData={loginData} setLoginData={setLoginData} />
       )} */}
-    </div>
-    
+      </div>
+
       <div className="auth-form-container">
         <h2 className="reg">Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
