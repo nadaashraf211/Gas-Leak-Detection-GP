@@ -31,24 +31,34 @@ export const Login = (props) => {
       console.log(loginData.userMail);
       console.log(loginData.userPassword);
       const url = `${baseurl}?${queryParams}`;
-      const response = await fetch(url);
-      const data = await response.json();
+      fetch(url, {
+        method: "GET",
+        credentials: "include",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          if (data.Login) {
+            console.log("Logged in successfully");
+            // navigate('/profile', { state: { loginSuccessful: true } });
+            // useEffect(() => {
 
-      if (data.Login) {
-        console.log("Logged in successfully");
-        // navigate('/profile', { state: { loginSuccessful: true } });
-        // useEffect(() => {
-
-        //   const userLoggedIn =data.Login;
-        //   setIsLoggedIn(userLoggedIn);
-        // }, []);
-        setIsLoggedIn(true);
-      } else {
-        const err = data.text;
-        console.log(err);
-        console.log("not Logged in");
-        throw new Error("Data is incorrect");
-      }
+            //   const userLoggedIn =data.Login;
+            //   setIsLoggedIn(userLoggedIn);
+            // }, []);
+            setIsLoggedIn(true);
+          } else {
+            const err = data.text;
+            console.log(err);
+            console.log("not Logged in");
+            throw new Error("Data is incorrect");
+          }
+        });
     } catch (error) {
       console.log("catch error");
       console.error("Error submitting data:", error);
