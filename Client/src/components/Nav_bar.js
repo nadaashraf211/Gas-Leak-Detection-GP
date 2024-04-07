@@ -33,11 +33,9 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
         })
         .then((data) => {
           if (data.valid) {
-            setTimeout(() => {
-              // Assuming res is a boolean indicating login success
-              const x = true; // Example value for demonstration
-              resolve(x); // Resolve the promise with the result
-            }, 1000);
+            x = true;
+            console.log("True");
+            resolve(true);
           } else {
             console.log("false");
             x = false;
