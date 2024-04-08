@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Nav_bar } from "./Nav_bar";
 
 export const Login = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [loginData, setLoginData] = useState({
     userMail: "",
     userPassword: "",
   });
   const navigate = useNavigate();
-
 
   const handleChange = (e) => {
     setLoginData({
@@ -43,9 +42,8 @@ export const Login = (props) => {
           console.log(data);
           if (data.Login) {
             console.log("Logged in successfully");
-            navigate('/profile')
-            // navigate('/profile', { state: { loginSuccessful: true } });
-
+            navigate("/profile");
+            window.location.reload();
             setIsLoggedIn(true);
           } else {
             const err = data.text;

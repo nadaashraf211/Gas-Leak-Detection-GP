@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, createContext } from "react";
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -10,60 +10,42 @@ import { useNavigate } from "react-router-dom";
 // import { AuthContext } from '../pages/LoginPage/LoginPage';
 
 export const Nav_bar = () => {
-  let x;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  let loginSuccessful;
   const [activeLink, setActiveLink] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handlelogin = () => {
-    setIsLoggedIn(true); 
+    setIsLoggedIn(true);
   };
   const handlelogout = () => {
-    setIsLoggedIn(false); 
+    setIsLoggedIn(false);
   };
-  // If loginSuccessful is not set or is set to null, set it to true
-  // const location = useLocation();
-  // const navigate = useNavigate();
 
   function check() {
-    return new Promise((resolve, reject) => {
-      const url = new URL("http://localhost:9000/api/v1/users/");
-      fetch(url, {
-        method: "GET",
-        credentials: "include",
+    const url = new URL("http://localhost:9000/api/v1/users/");
+    fetch(url, {
+      method: "GET",
+      credentials: "include",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
       })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (data.valid) {
-            x = true;
-            handlelogin();
-            console.log("True");
-            resolve(true);
-          } else {
-            console.log("false");
-            x = false;
-            handlelogout();
-            resolve(false);
-          }
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
+      .then((data) => {
+        if (data.valid) {
+          handlelogin();
+          console.log("True");
+        } else {
+          console.log("false");
+          handlelogout();
+        }
+      });
   }
 
-  check().then((res) => {
-    loginSuccessful = { loginSuccessful: res };
-    console.log(loginSuccessful);
-  });
-  console.log(loginSuccessful);
+  check();
 
   const logout = async () => {
     const url = new URL("http://localhost:9000/api/v1/users/logout");
@@ -80,15 +62,6 @@ export const Nav_bar = () => {
       }
     });
   };
-  // const { isLoggedIn } = useContext(AuthContext);
-  // const style1 = ( { isActive }) => {
-  //     return {
-  //         color : isActive ? "#005490" : "#fff" ,
-  //         fontSize : isActive ? "32px" : "28px",
-  //         textDecoration : isActive ? "none" : "underline",
-  //         fontWeight : isActive ? "bold" : "normal"
-  //     }
-  // }
 
   useEffect(() => {
     const onScroll = () => {
@@ -164,7 +137,7 @@ export const Nav_bar = () => {
                 </Dropdown.Menu>
               </Dropdown>
             )}
-            {isLoggedIn === true ?
+            {isLoggedIn === true ? (
               <Nav.Link
                 href="/profile"
                 className={
@@ -175,15 +148,19 @@ export const Nav_bar = () => {
                 onClick={() => onUpdateActiveLink("Profile")}
               >
                 Dashboard
-              </Nav.Link>:<></>
-            }
+              </Nav.Link>
+            ) : (
+              <></>
+            )}
             {!isLoggedIn && (
               <Nav.Link
                 href="/login"
                 className={
                   activeLink === "Login" ? "active navbar-link" : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink("Login")}
+                onClick={() => {
+                  onUpdateActiveLink("Login");
+                }}
               >
                 Login
               </Nav.Link>
@@ -213,7 +190,6 @@ export const Nav_bar = () => {
                 onClick={() => {
                   logout();
                   onUpdateActiveLink("Login");
-                  
                 }}
               >
                 Logout
