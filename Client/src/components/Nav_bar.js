@@ -6,17 +6,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // import { AuthContext } from '../pages/LoginPage/LoginPage';
 
-export const Nav_bar = ({ isLoggedIn, onLogout }) => {
+export const Nav_bar = () => {
   let x;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   let loginSuccessful;
   const [activeLink, setActiveLink] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const handlelogin = () => {
+    setIsLoggedIn(true); 
+  };
+  const handlelogout = () => {
+    setIsLoggedIn(false); 
+  };
   // If loginSuccessful is not set or is set to null, set it to true
-  const location = useLocation();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   function check() {
     return new Promise((resolve, reject) => {
@@ -34,11 +43,13 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
         .then((data) => {
           if (data.valid) {
             x = true;
+            handlelogin();
             console.log("True");
             resolve(true);
           } else {
             console.log("false");
             x = false;
+            handlelogout();
             resolve(false);
           }
         })
@@ -59,20 +70,15 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
     fetch(url, {
       method: "GET",
       credentials: "include",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.valid) {
-          console.log("Logged Out");
-        } else {
-          console.log("Can't Logout");
-        }
-      });
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Can't Delete Session");
+      } else {
+        handlelogout();
+        console.log("logged outtttt");
+        console.log(response);
+      }
+    });
   };
   // const { isLoggedIn } = useContext(AuthContext);
   // const style1 = ( { isActive }) => {
@@ -132,7 +138,7 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
             >
               Overview
             </Nav.Link>
-            {loginSuccessful && (
+            {isLoggedIn && (
               <Dropdown
                 className="serve"
                 show={showDropdown}
@@ -158,7 +164,7 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
                 </Dropdown.Menu>
               </Dropdown>
             )}
-            {loginSuccessful && (
+            {isLoggedIn === true ?
               <Nav.Link
                 href="/profile"
                 className={
@@ -169,9 +175,9 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
                 onClick={() => onUpdateActiveLink("Profile")}
               >
                 Dashboard
-              </Nav.Link>
-            )}
-            {!loginSuccessful && (
+              </Nav.Link>:<></>
+            }
+            {!isLoggedIn && (
               <Nav.Link
                 href="/login"
                 className={
@@ -182,7 +188,6 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
                 Login
               </Nav.Link>
             )}
-
             {/* <Nav.Link
                                 href="#Register"
                                 className={activeLink === "Register" ? "active navbar-link" : "navbar-link"}
@@ -199,15 +204,16 @@ export const Nav_bar = ({ isLoggedIn, onLogout }) => {
             >
               Contact
             </Nav.Link>
-            {loginSuccessful && (
+            {isLoggedIn && (
               <Nav.Link
                 href="/login"
                 className={
                   activeLink === "Login" ? "active navbar-link" : "navbar-link"
                 }
                 onClick={() => {
+                  logout();
                   onUpdateActiveLink("Login");
-                  loginSuccessful = false;
+                  
                 }}
               >
                 Logout

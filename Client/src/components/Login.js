@@ -8,10 +8,8 @@ export const Login = (props) => {
     userMail: "",
     userPassword: "",
   });
-  // const navigate = useNavigate();
-  useEffect(() => {
-    // Initialize or check authentication status here
-  }, []);
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setLoginData({
@@ -45,12 +43,9 @@ export const Login = (props) => {
           console.log(data);
           if (data.Login) {
             console.log("Logged in successfully");
+            navigate('/profile')
             // navigate('/profile', { state: { loginSuccessful: true } });
-            // useEffect(() => {
 
-            //   const userLoggedIn =data.Login;
-            //   setIsLoggedIn(userLoggedIn);
-            // }, []);
             setIsLoggedIn(true);
           } else {
             const err = data.text;

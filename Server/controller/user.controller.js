@@ -107,6 +107,17 @@ exports.login = async (req, res) => {
   }
 };
 
+exports.logout = async (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error destroying session:", err);
+      res.status(500).send("Error destroying session");
+    } else {
+      res.status(201).send("Session Destroyed Successfully");
+    }
+  });
+};
+
 exports.Check = async (req, res) => {
   if (req.session.userMail) {
     return res.json({ valid: true, userMail: req.session.userMail });
