@@ -15,6 +15,7 @@ const Profile = () => {
   const x = useNavigate();
   const [components, setComponents] = useState([]);
   const [counter, setCounter] = useState(2);
+  const [alertt, setalert] = useState(0);
 
   const handleAddRoom = () => {
     setCounter(counter + 1);
@@ -24,7 +25,6 @@ const Profile = () => {
   const [numSensor, setNumSensor] = useState(8);
 
   let numActive = 5;
-  let alert = 2;
   let room = 1;
   const addcamera = () => {
     setNumCamera((prevNum) => prevNum + 1);
@@ -32,6 +32,43 @@ const Profile = () => {
   const addsensor = () => {
     setNumSensor((prevNum) => prevNum + 1);
   };
+  const check = async (imageUrls) => {
+    try {
+      for (const imageUrl of imageUrls) {
+        const response1 = await fetch(imageUrl);
+        if (!response1.ok) {
+          throw new Error("Failed to fetch image");
+        }
+        const imageData = await response1.blob();
+
+        // Create form data and append the image data
+        const formData = new FormData();
+        formData.append("image", imageData, "test.png");
+        const response = await fetch("http://127.0.0.1:5000/thermal", {
+          method: "POST",
+          body: formData,
+        });
+        if (!response.ok) {
+          const err = await response.text();
+          console.log(err);
+          throw new Error("Failed to submit data");
+        }
+        const x = await response.text();
+        console.log(x);
+        if (x[1] === "1") {
+          setalert(alertt + 1);
+        }
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+      }
+    } catch (error) {
+      console.error("Error submitting data:", error);
+    }
+  };
+  const imageUrls = [
+    "http://localhost:3000/test.png",
+    "http://localhost:3000/test2.png",
+  ];
+
   return (
     <section className="Profile" id="Profile">
       <div class="breadcrumb-section breadcrumb-bg">
@@ -81,7 +118,7 @@ const Profile = () => {
                   <div class="d-flex justify-content-center align-items-center">
                     <p className="history-text">Number of Alerts:</p>
                     <img src={Alert} alt="Logo" className="active-logo" />
-                    <p>{alert}</p>
+                    <p>{alertt}</p>
                   </div>
                 </div>
               </div>
