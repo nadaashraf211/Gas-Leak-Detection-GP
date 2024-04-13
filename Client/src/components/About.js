@@ -10,6 +10,13 @@ import sensor from "../assets/images/sensor.jpg";
 import overview from "../assets/images/overview.jpeg";
 import boy from "../assets/images/boy.jpeg";
 import girl from "../assets/images/girl.jpeg";
+import seif from "../assets/images/seif.jpeg";
+import bahaa from "../assets/images/bahaa.jpg";
+import nadaa from "../assets/images/nada1.jpeg";
+import nabila from "../assets/images/nabila.jpg";
+import nada from "../assets/images/nada.jpeg";
+import sohaila from "../assets/images/sohaila.jpeg";
+
 
 import FooterPage from "../pages/FooterPage/FooterPage";
 
@@ -178,71 +185,72 @@ const About = () => {
                 <h1 className="team">Our Team </h1>
   <div className="info row"> 
 
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
+  <div className="col-sm-6 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={seif} alt="Card image" style={{width: '100%', height:'250px'}} />
     <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text.</p>
+      <h4 class="card-title">Seif Amr</h4>
+      {/* <p class="card-text">Some example text some example text.</p> */}
+      <a href="http://www.linkedin.com/in/seif-amr-7a6529211" class="btn">See Profile</a>
+    </div>
+  </div>
+  <br />
+  </div>
+  <div className="col-sm-6 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={bahaa} alt="Card image" style={{width: '100%', height:'250px'}} />
+    <div class="card-body">
+      <h4 class="card-title">Ahmed Bahaa</h4>
+      {/* <p class="card-text">Some example text some example text.</p> */}
       <a href="#" class="btn">See Profile</a>
     </div>
   </div>
   <br />
   </div>
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
-    <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text.</p>
-      <a href="#" class="btn">See Profile</a>
-    </div>
-  </div>
-  <br />
-  </div>
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
-    <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text. </p>
-      <a href="#" class="btn">See Profile</a>
-    </div>
-  </div>
-  <br />
-  </div>
+  
   </div>
   <div className="row"> 
 
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
+  <div className="col-sm-3 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={nadaa} alt="Card image" style={{width: '100%', height:'250px'}} />
     <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text. </p>
+      <h4 class="card-title">Nada Ashraf</h4>
+      {/* <p class="card-text">Some example text some example text. </p> */}
+      <a href="https://www.linkedin.com/in/nada-ashraf-024797219" class="btn">See Profile</a>
+    </div>
+  </div>
+  <br />
+  </div>
+  <div className="col-sm-3 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={nabila} alt="Card image" style={{width: '100%', height:'250px'}} />
+    <div class="card-body">
+      <h4 class="card-title">Nabila Wael</h4>
+      {/* <p class="card-text">Some example text some example text</p> */}
+      <a href="https://www.linkedin.com/in/nabila-wael-46176023b" class="btn">See Profile</a>
+    </div>
+  </div>
+  <br />
+  </div>
+  <div className="col-sm-3 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={nada} alt="Card image" style={{width: '100%', height:'250px'}} />
+    <div class="card-body">
+      <h4 class="card-title">Nada Saeed</h4>
+      {/* <p class="card-text">Some example text some example text. </p> */}
       <a href="#" class="btn">See Profile</a>
     </div>
   </div>
   <br />
   </div>
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
+  <div className="col-sm-3 p-3">
+  <div class="card" style={{width: '200px'}}>
+    <img class="card-img-top" src={sohaila} alt="Card image" style={{width: '100%', height:'250px'}} />
     <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text</p>
-      <a href="#" class="btn">See Profile</a>
-    </div>
-  </div>
-  <br />
-  </div>
-  <div className="col-sm-4 p-3">
-  <div class="card" style={{width: '250px'}}>
-    <img class="card-img-top" src={girl} alt="Card image" style={{width: '100%', height:'250px'}} />
-    <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text. </p>
-      <a href="#" class="btn">See Profile</a>
+      <h4 class="card-title">Sohaila Rady</h4>
+      {/* <p class="card-text">Some example text some example text. </p> */}
+      <a href="https://www.linkedin.com/in/sohaila-abdelnasser/" class="btn">See Profile</a>
     </div>
   </div>
   <br />
