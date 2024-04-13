@@ -7,7 +7,7 @@ import active from "../assets/images/activeCamera.png";
 import Alert from "../assets/images/alert.png";
 import addCamera from "../assets/images/addPhoto.png";
 import addSensor from "../assets/images/addSensor.png";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Room from "./Room";
 import { useNavigate } from "react-router-dom";
 
@@ -21,17 +21,30 @@ const Profile = () => {
     setCounter(counter + 1);
     setComponents([...components, <Room key={counter} counter={counter} />]);
   };
-  const [numCamera, setNumCamera] = useState(8);
-  const [numSensor, setNumSensor] = useState(8);
+  const [numCamera, setNumCamera] = useState(() => {
+    const storedValue = localStorage.getItem('numCamera');
+    return storedValue ? parseInt(storedValue) : 8; // Initial value or stored value
+  });
+
+  const [numSensor, setNumSensor] = useState(() => {
+    const storedValue = localStorage.getItem('numSensor');
+    return storedValue ? parseInt(storedValue) : 8; // Initial value or stored value
+  });
 
   let numActive = 5;
   let room = 1;
   const addcamera = () => {
     setNumCamera((prevNum) => prevNum + 1);
   };
+
+  useEffect(() => {
+    localStorage.setItem('numCamera', numCamera);
+  }, [numCamera]);
+
   const addsensor = () => {
     setNumSensor((prevNum) => prevNum + 1);
   };
+<<<<<<< Updated upstream
   const check = async (imageUrls) => {
     try {
       for (const imageUrl of imageUrls) {
@@ -69,6 +82,12 @@ const Profile = () => {
     "http://localhost:3000/test2.png",
   ];
 
+=======
+
+  useEffect(() => {
+    localStorage.setItem('numSensor', numSensor);
+  }, [numSensor]);
+>>>>>>> Stashed changes
   return (
     <section className="Profile" id="Profile">
       <div class="breadcrumb-section breadcrumb-bg">
