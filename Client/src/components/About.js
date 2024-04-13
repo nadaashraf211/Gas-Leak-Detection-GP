@@ -202,7 +202,7 @@ const About = () => {
     <div class="card-body">
       <h4 class="card-title">Ahmed Bahaa</h4>
       {/* <p class="card-text">Some example text some example text.</p> */}
-      <a href="#" class="btn">See Profile</a>
+      <a href="https://www.linkedin.com/in/ahmed-bahaa-76b811220/" class="btn">See Profile</a>
     </div>
   </div>
   <br />
