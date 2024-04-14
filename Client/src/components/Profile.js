@@ -15,12 +15,17 @@ const Profile = () => {
   const x = useNavigate();
   const [components, setComponents] = useState([]);
   const [counter, setCounter] = useState(2);
-  const [alertt, setalert] = useState(0);
+  
+  const [alertt, setalert] = useState(() => {
+    const storedValue = localStorage.getItem('alertt');
+    return storedValue ? parseInt(storedValue) : 0; // Initial value or stored value
+  });
 
   const handleAddRoom = () => {
     setCounter(counter + 1);
     setComponents([...components, <Room key={counter} counter={counter} />]);
   };
+
   const [numCamera, setNumCamera] = useState(() => {
     const storedValue = localStorage.getItem('numCamera');
     return storedValue ? parseInt(storedValue) : 8; // Initial value or stored value
@@ -44,7 +49,12 @@ const Profile = () => {
   const addsensor = () => {
     setNumSensor((prevNum) => prevNum + 1);
   };
-<<<<<<< Updated upstream
+
+  useEffect(() => {
+    localStorage.setItem('numSensor', numSensor);
+  }, [numSensor]);
+
+
   const check = async (imageUrls) => {
     try {
       for (const imageUrl of imageUrls) {
@@ -70,6 +80,7 @@ const Profile = () => {
         console.log(x);
         if (x[1] === "1") {
           setalert(alertt + 1);
+          
         }
         await new Promise((resolve) => setTimeout(resolve, 3000));
       }
@@ -82,12 +93,12 @@ const Profile = () => {
     "http://localhost:3000/test2.png",
   ];
 
-=======
-
   useEffect(() => {
-    localStorage.setItem('numSensor', numSensor);
-  }, [numSensor]);
->>>>>>> Stashed changes
+    localStorage.setItem('alertt', alertt);
+  }, [alertt]);
+
+
+
   return (
     <section className="Profile" id="Profile">
       <div class="breadcrumb-section breadcrumb-bg">
