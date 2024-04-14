@@ -50,6 +50,7 @@ const Profile = () => {
   const check = async (imageUrls) => {
     try {
       for (const imageUrl of imageUrls) {
+        console.log(imageUrl);
         const response1 = await fetch(imageUrl);
         if (!response1.ok) {
           throw new Error("Failed to fetch image");
@@ -70,7 +71,7 @@ const Profile = () => {
         }
         const x = await response.text();
         console.log(x);
-        if (x[1] === "1") {
+        if (x[1] === "3") {
           setalert(alertt + 1);
           settest(false);
           break;
@@ -83,8 +84,16 @@ const Profile = () => {
     }
   };
   const imageUrls = [
-    "http://localhost:3000/test.png",
-    "http://localhost:3000/test2.png",
+    "http://localhost:3000/images/49_Perfume.png",
+    "http://localhost:3000/images/50_Perfume.png",
+    "http://localhost:3000/images/51_Perfume.png",
+    "http://localhost:3000/images/52_Perfume.png",
+    "http://localhost:3000/images/53_Perfume.png",
+    "http://localhost:3000/images/33_Smoke.png",
+    "http://localhost:3000/images/73_NoGas.png",
+    "http://localhost:3000/images/74_NoGas.png",
+    "http://localhost:3000/images/75_NoGas.png",
+    "http://localhost:3000/images/76_NoGas.png",
   ];
   useEffect(() => {
     localStorage.setItem("numCamera", numCamera);

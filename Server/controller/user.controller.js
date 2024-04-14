@@ -113,7 +113,7 @@ exports.logout = async (req, res) => {
       console.error("Error destroying session:", err);
       res.status(500).send("Error destroying session");
     } else {
-      res.clearCookie("cookieName");
+      res.clearCookie("test");
       res.status(201).send("Session Destroyed Successfully");
     }
   });

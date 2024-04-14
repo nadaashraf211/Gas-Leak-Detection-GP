@@ -10,6 +10,7 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
+    name: "test", // Assign a custom name to the cookie
     cookie: {
       secure: false,
       maxAge: 1000 * 60 * 60,
