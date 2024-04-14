@@ -86,10 +86,10 @@ const Profile = () => {
   const imageUrls = [
     "http://localhost:3000/images/49_Perfume.png",
     "http://localhost:3000/images/50_Perfume.png",
+    "http://localhost:3000/images/33_Smoke.png",
     "http://localhost:3000/images/51_Perfume.png",
     "http://localhost:3000/images/52_Perfume.png",
     "http://localhost:3000/images/53_Perfume.png",
-    "http://localhost:3000/images/33_Smoke.png",
     "http://localhost:3000/images/73_NoGas.png",
     "http://localhost:3000/images/74_NoGas.png",
     "http://localhost:3000/images/75_NoGas.png",

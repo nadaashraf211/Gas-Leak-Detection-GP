@@ -24,7 +24,7 @@ const Fail = () => {
               <div class="checkmark-circle">
                 <i class="checkmark">X</i>
               </div>
-              <p className="txt">BE Careful!</p>
+              <p className="txt">BE CAREFUL!</p>
               <p className="txt">There is A Gas Leakage</p>
             </div>
             <div class="modal-footer">
