@@ -45,6 +45,7 @@ class App extends Component {
           <Route path="/services/fusion" element={<FusionPage />} />
           <Route path="/footer" element={<FooterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/fail" element={<FailPage />} />
           <Route path="*" element={<h2> Page Not Found </h2>} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/sucessLogin" element={<SuceessPage />} />

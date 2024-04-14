@@ -7,17 +7,17 @@ import active from "../assets/images/activeCamera.png";
 import Alert from "../assets/images/alert.png";
 import addCamera from "../assets/images/addPhoto.png";
 import addSensor from "../assets/images/addSensor.png";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Room from "./Room";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-  const x = useNavigate();
   const [components, setComponents] = useState([]);
+  const [test, settest] = useState(true);
   const [counter, setCounter] = useState(2);
-  
+
   const [alertt, setalert] = useState(() => {
-    const storedValue = localStorage.getItem('alertt');
+    const storedValue = localStorage.getItem("alertt");
     return storedValue ? parseInt(storedValue) : 0; // Initial value or stored value
   });
 
@@ -27,12 +27,12 @@ const Profile = () => {
   };
 
   const [numCamera, setNumCamera] = useState(() => {
-    const storedValue = localStorage.getItem('numCamera');
+    const storedValue = localStorage.getItem("numCamera");
     return storedValue ? parseInt(storedValue) : 8; // Initial value or stored value
   });
 
   const [numSensor, setNumSensor] = useState(() => {
-    const storedValue = localStorage.getItem('numSensor');
+    const storedValue = localStorage.getItem("numSensor");
     return storedValue ? parseInt(storedValue) : 8; // Initial value or stored value
   });
 
@@ -42,19 +42,11 @@ const Profile = () => {
     setNumCamera((prevNum) => prevNum + 1);
   };
 
-  useEffect(() => {
-    localStorage.setItem('numCamera', numCamera);
-  }, [numCamera]);
-
   const addsensor = () => {
     setNumSensor((prevNum) => prevNum + 1);
   };
 
-  useEffect(() => {
-    localStorage.setItem('numSensor', numSensor);
-  }, [numSensor]);
-
-
+  const navigate = useNavigate();
   const check = async (imageUrls) => {
     try {
       for (const imageUrl of imageUrls) {
@@ -80,8 +72,10 @@ const Profile = () => {
         console.log(x);
         if (x[1] === "1") {
           setalert(alertt + 1);
-          
+          settest(false);
+          break;
         }
+
         await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     } catch (error) {
@@ -92,13 +86,21 @@ const Profile = () => {
     "http://localhost:3000/test.png",
     "http://localhost:3000/test2.png",
   ];
-
   useEffect(() => {
-    localStorage.setItem('alertt', alertt);
+    localStorage.setItem("numCamera", numCamera);
+  }, [numCamera]);
+  useEffect(() => {
+    localStorage.setItem("numSensor", numSensor);
+  }, [numSensor]);
+  useEffect(() => {
+    localStorage.setItem("alertt", alertt);
   }, [alertt]);
-
-
-
+  useEffect(() => {
+    check(imageUrls);
+  }, []);
+  if (!test) {
+    navigate("/fail");
+  }
   return (
     <section className="Profile" id="Profile">
       <div class="breadcrumb-section breadcrumb-bg">
