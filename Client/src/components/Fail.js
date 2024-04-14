@@ -25,7 +25,7 @@ const Fail = () => {
         <p className="txt">There is A Gas Leakage</p>
       </div>
       <div class="modal-footer">
-        <button type="button" onClick={()=>x("/services/sensor")} class="btn start-button">Go Back</button>
+        <button type="button" onClick={()=>x("/profile")} class="btn start-button">Go Back</button>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
-.Fail{
+/* .Fail{
     margin-top: 150px;
-}
+} */
 /* .modal-content {
     max-width: 400px;
     margin: auto;
@@ -11,8 +11,9 @@
     justify-content: center;
 }
 .modal-body {
+    margin-top: 150px;
     text-align: center;
-    color: #f2f2f2;
+    color: rgb(221, 83, 83);
     
 }
 .Fail .modal-body .txt{
@@ -34,7 +35,7 @@
     background-color: rgb(221, 83, 83);
 }
 .checkmark {
-    color: red;
+    color: white;
     font-size: 30px;
 }
 .Fail .btn {
@@ -47,5 +48,5 @@
 }
 
 .Fail .btn:hover{
-    background-color: #b8c690;
+    background-color: #284629;
 }
