@@ -9,9 +9,10 @@ import React, { useState } from "react";
 
 const ThermalImage = () => {
   const [image, setImage] = useState(null);
-
+  const [isFileSelected, setIsFileSelected] = useState(false);
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
+    setIsFileSelected(true);
     setImage(selectedImage);
   };
 
@@ -136,15 +137,19 @@ const ThermalImage = () => {
             </p>
             {/* <label for="inputExample">Example Input</label> */}
             <form onSubmit={handleSubmit}>
-              <input
-                className="file-input"
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-              />
-              <button className="sub" type="submit">
+              <div className="custom-file-input">
+                <label for="fileInput">Choose file</label>
+                <input
+                  id="fileInput"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                />
+                {isFileSelected && <p className="filetext">File successfully selected!</p>}
+              </div>
+              {/* <button className="sub" type="submit">
                 Upload
-              </button>
+              </button> */}
               {/* <input className='upload' type="submit" value="Upload" /> */}
             </form>
           </div>

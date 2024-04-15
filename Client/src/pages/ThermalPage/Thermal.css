@@ -82,7 +82,27 @@ margin-top: 30px;
     text-align: center;
     align-items: center !important;
 }
-
+.custom-file-input input[type="file"] {
+    display: none;
+  }
+.custom-file-input label {
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #284628;
+    align-items: start;
+    text-align: left;
+    border-radius: 20px;
+    margin-bottom: 15px;
+  }
+  .custom-file-input label:hover {
+    background-color: #7b937c; /* Change button background color on hover */
+  }
+  .filetext{
+    color: #716b6b;
+    margin-bottom: 30px;
+  }
 .Thermal .sub{
     align-items: center;
     justify-content: center;
