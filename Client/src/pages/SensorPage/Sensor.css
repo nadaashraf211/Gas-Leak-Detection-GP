@@ -72,10 +72,16 @@
     
     /* background-color: #b5c8ac; */
     margin-top: 30px;
-    width: 50%; 
+    width: 100%; 
      margin: 0 auto;
     text-align: center;
     align-items: center !important;
+}
+.Sensor .measure{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    padding-left: 10%;
 }
 
 .rounded{
@@ -87,8 +93,9 @@
 
 .Sensor .data {
     margin-top: 50px;
-    align-items: center;
+    align-items: center !important;
     text-align: center;
+    
 }
 
 .Sensor .sub {

@@ -9,6 +9,7 @@ import React, { useState } from "react";
 
 const Sensor = () => {
   const [image, setImage] = useState(null);
+  const [output, setOutput] = useState(null);
   const [sensorData, setSensorData] = useState({
     f1: "",
     f2: "",
@@ -54,11 +55,12 @@ const Sensor = () => {
       }
       const x = await response.text();
       console.log(x);
+      
+      setOutput(x);
     } catch (error) {
       console.error("Error submitting data:", error);
     }
   };
-
   return (
     <section className="Sensor" id="Sensor">
       <div class="breadcrumb-section breadcrumb-bg">
@@ -157,74 +159,98 @@ const Sensor = () => {
                         <input type="text" className="form-control form-control-lg" id="inputExample" placeholder="Enter Sensor measurments"></input>
                         {/* <button type="button" className="btn1 btn btn-outline-dark align-items-center">Submit</button> */}
             {/* <button className="sub" type="submit">Submit</button> */}
-            <form onSubmit={handleSubmit}>
-              <input
-                value={sensorData.f1}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f1"
-                placeholder="Enter Sensor measurments"
-                name="f1"
-              ></input>
-              <input
-                value={sensorData.f2}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f2"
-                placeholder="Enter Sensor measurments"
-                name="f2"
-              ></input>
-              <input
-                value={sensorData.f3}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f3"
-                placeholder="Enter Sensor measurments"
-                name="f3"
-              ></input>
-              <input
-                value={sensorData.f4}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f4"
-                placeholder="Enter Sensor measurments"
-                name="f4"
-              ></input>
-              <input
-                value={sensorData.f5}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f5"
-                placeholder="Enter Sensor measurments"
-                name="f5"
-              ></input>
-              <input
-                value={sensorData.f6}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f6"
-                placeholder="Enter Sensor measurments"
-                name="f6"
-              ></input>
-              <input
-                value={sensorData.f7}
-                onChange={handleChange}
-                type="number"
-                className="form-control form-control-lg"
-                id="f7"
-                placeholder="Enter Sensor measurments"
-                name="f7"
-              ></input>
+            <form onSubmit={handleSubmit} className="measure">
+              <div className="row measure">
+                <div className="col-sm-3 p-3">
+                  <input
+                    value={sensorData.f1}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f1"
+                    placeholder="MQ2"
+                    name="f1"
+                  ></input>
+                </div>
+                <div className="col-sm-3 p-3">
+                  <input
+                    value={sensorData.f2}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f2"
+                    placeholder="MQ3"
+                    name="f2"
+                  ></input>
+                </div>
+                <div className="col-sm-3 p-3">
+                  <input
+                    value={sensorData.f3}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f3"
+                    placeholder="MQ5"
+                    name="f3"
+                  ></input>
+                </div>
 
+
+                <div className="col-sm-3 p-3">
+                  <input
+                    value={sensorData.f4}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f4"
+                    placeholder="MQ6"
+                    name="f4"
+                  ></input>
+                </div>
+
+              </div>
+              <div className="row measure">
+                <div className="col-sm-4 p-3">
+                  <input
+                    value={sensorData.f5}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f5"
+                    placeholder="MQ7"
+                    name="f5"
+                  ></input>
+                </div>
+                <div className="col-sm-4 p-3">
+                  <input
+                    value={sensorData.f6}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f6"
+                    placeholder="MQ8"
+                    name="f6"
+                  ></input>
+                </div>
+                <div className="col-sm-4 p-3">
+                  <input
+                    value={sensorData.f7}
+                    onChange={handleChange}
+                    type="number"
+                    className="form-control form-control-lg"
+                    id="f7"
+                    placeholder="MQ135"
+                    name="f7"
+                  ></input>
+                </div>
+              </div>
+             {output && (<div className="alert alert-success" role="alert">
+                {output}
+              </div>)}
               <button className="sub" type="submit">
                 Upload
               </button>
+
               {/* <input className='upload' type="submit" value="Upload" /> */}
             </form>
           </div>
