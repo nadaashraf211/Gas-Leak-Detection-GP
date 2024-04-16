@@ -29,7 +29,7 @@ def predict_therm():
     pred = cnn_model.predict(image_array)
     argmax_predictions = np.argmax(pred, axis=1)
     predicted_labels_mapped = [label_mapping[label] for label in argmax_predictions]
-    return str(predicted_labels_mapped)
+    return jsonify(str(argmax_predictions[0]))
 
 
 

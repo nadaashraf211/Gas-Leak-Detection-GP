@@ -29,6 +29,7 @@ export const Register = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let err = "";
     try {
       const response = await fetch("http://localhost:9000/api/v1/users/save", {
         method: "POST",
@@ -40,6 +41,7 @@ export const Register = (props) => {
       if (!response.ok) {
         const err = await response.text();
         console.log(err);
+        setErrorMessage(err);
         throw new Error("Failed to submit data");
       }
       console.log("Data submitted successfully");
@@ -52,7 +54,6 @@ export const Register = (props) => {
       }, 1000);
     } catch (error) {
       console.error("Error submitting data:", error);
-      setErrorMessage("There was an error submitting your data.");
       setSuccessMessage(null);
     }
   };

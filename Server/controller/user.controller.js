@@ -35,13 +35,13 @@ exports.saveUserData = async (req, res) => {
     const userPhones = result.rows.map((row) => row.user_phone);
 
     if (userMails.includes(userMail)) {
-      return res.status(500).send({ error: "Mail Is Already Existed." });
+      return res.status(500).send("The mail already exists.");
     } else {
       console.log("Valid Mail");
     }
 
     if (userPhones.includes(userPhone)) {
-      return res.status(500).send({ error: "PhoneNumber Is Already Existed." });
+      return res.status(500).send("The phone number already exists.");
     } else {
       console.log("Valid Phone Number ");
     }

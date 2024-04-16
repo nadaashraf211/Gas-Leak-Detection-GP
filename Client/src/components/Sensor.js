@@ -55,7 +55,7 @@ const Sensor = () => {
       }
       const x = await response.text();
       console.log(x);
-      
+
       setOutput(x);
     } catch (error) {
       console.error("Error submitting data:", error);
@@ -195,7 +195,6 @@ const Sensor = () => {
                   ></input>
                 </div>
 
-
                 <div className="col-sm-3 p-3">
                   <input
                     value={sensorData.f4}
@@ -207,7 +206,6 @@ const Sensor = () => {
                     name="f4"
                   ></input>
                 </div>
-
               </div>
               <div className="row measure">
                 <div className="col-sm-4 p-3">
@@ -244,9 +242,11 @@ const Sensor = () => {
                   ></input>
                 </div>
               </div>
-             {output && (<div className="alert alert-success" role="alert">
-                {output}
-              </div>)}
+              {output && (
+                <div className="alert alert-success" role="alert">
+                  {output}
+                </div>
+              )}
               <button className="sub" type="submit">
                 Upload
               </button>
