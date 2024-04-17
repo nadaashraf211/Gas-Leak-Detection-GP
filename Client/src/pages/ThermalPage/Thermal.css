@@ -91,10 +91,13 @@ margin-top: 30px;
     border-radius: 5px;
     cursor: pointer;
     background-color: #284628;
-    align-items: start;
+    /* align-items: start; */
     text-align: left;
     border-radius: 20px;
     margin-bottom: 15px;
+    align-items: center;
+    text-align: center;
+    
   }
   .custom-file-input label:hover {
     background-color: #7b937c; /* Change button background color on hover */
@@ -110,4 +113,9 @@ margin-top: 30px;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 50px;
+}
+.alert{
+    width: 25%;
+    margin-left: 37%;
+    text-align: center;
 }

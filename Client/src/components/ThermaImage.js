@@ -10,6 +10,7 @@ import React, { useState } from "react";
 const ThermalImage = () => {
   const [image, setImage] = useState(null);
   const [isFileSelected, setIsFileSelected] = useState(false);
+  const [output, setOutput] = useState(null);
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setIsFileSelected(true);
@@ -34,10 +35,12 @@ const ThermalImage = () => {
       }
       const x = await response.text();
       console.log(x);
+      setOutput(x);
     } catch (error) {
       console.error("Error submitting data:", error);
     }
   };
+  
 
   return (
     <section className="Thermal" id="Thermal">
@@ -146,7 +149,13 @@ const ThermalImage = () => {
                   onChange={handleImageChange}
                 />
                 {isFileSelected && <p className="filetext">File successfully selected!</p>}
+                {output && (
+                <div className="alert alert-success" role="alert">
+                  {output}
+                </div>
+              )}
               </div>
+              
               {/* <button className="sub" type="submit">
                 Upload
               </button> */}

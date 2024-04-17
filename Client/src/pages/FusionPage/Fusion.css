@@ -38,15 +38,21 @@
   
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
   /* background-color: #b5c8ac; */
 }
 
-/* .Sensor .btn1{
-        margin-left: 250px;
-    } */
+.Fusion .measure{
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  padding-left: 25%;
+}
+.Fusion .custom-file-input{
+  padding-left: 25%;
+}
 .Fusion .data {
   margin-top: 50px;
 }
@@ -95,6 +101,7 @@
 }
 .Fusion .sdata{
   color: #686363;
+ 
   /* text-align: center; */
   padding-left: 25%;
   font-family: 'Times New Roman', Times, serif;
