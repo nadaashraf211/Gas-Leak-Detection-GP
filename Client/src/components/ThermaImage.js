@@ -40,7 +40,6 @@ const ThermalImage = () => {
       console.error("Error submitting data:", error);
     }
   };
-  
 
   return (
     <section className="Thermal" id="Thermal">
@@ -49,7 +48,7 @@ const ThermalImage = () => {
           <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
               <div class="breadcrumb-text">
-                <h1>ThermalCamera System</h1>
+                <h1>Thermal Camera System</h1>
                 <p className="ser-text">
                   In addition to our hardware and software solutions, We offers
                   a full suite of services that support your leak monitoring and
@@ -148,18 +147,15 @@ const ThermalImage = () => {
                   accept="image/*"
                   onChange={handleImageChange}
                 />
-                {isFileSelected && <p className="filetext">File successfully selected!</p>}
+                {isFileSelected && (
+                  <p className="filetext">File successfully selected!</p>
+                )}
                 {output && (
-                <div className="alert alert-success" role="alert">
-                  {output}
-                </div>
-              )}
+                  <div className="alert alert-success" role="alert">
+                    {output}
+                  </div>
+                )}
               </div>
-              
-              {/* <button className="sub" type="submit">
-                Upload
-              </button> */}
-              {/* <input className='upload' type="submit" value="Upload" /> */}
             </form>
           </div>
         </div>

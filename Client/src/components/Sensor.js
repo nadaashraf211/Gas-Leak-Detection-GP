@@ -32,10 +32,7 @@ const Sensor = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleImageChange = (e) => {
-    const selectedImage = e.target.files[0];
-    setImage(selectedImage);
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = convertToShape(sensorData);
@@ -250,8 +247,6 @@ const Sensor = () => {
               <button className="sub" type="submit">
                 Upload
               </button>
-
-              {/* <input className='upload' type="submit" value="Upload" /> */}
             </form>
           </div>
         </div>
