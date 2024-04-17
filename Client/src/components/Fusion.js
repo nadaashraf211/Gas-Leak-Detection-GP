@@ -39,6 +39,7 @@ const Fusion = () => {
     return convertedData;
   };
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     e.preventDefault();
     const data = convertToShape(sensorData);

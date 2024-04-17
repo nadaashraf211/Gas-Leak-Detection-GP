@@ -156,6 +156,9 @@ const ThermalImage = () => {
                   </div>
                 )}
               </div>
+              <button className="sub" type="submit">
+                Submit 
+              </button>
             </form>
           </div>
         </div>
