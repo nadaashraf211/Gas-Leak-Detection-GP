@@ -50,10 +50,16 @@ const Sensor = () => {
         console.log(err);
         throw new Error("Failed to submit data");
       }
+      const class_map = {
+        0: "No Gas",
+        1: "Mixture",
+        2: "Perfume",
+        3: "Smoke",
+      };
       const x = await response.text();
-      console.log(x);
+      console.log(class_map[x[1]]);
 
-      setOutput(x);
+      setOutput(class_map[x[1]]);
     } catch (error) {
       console.error("Error submitting data:", error);
     }

@@ -39,7 +39,6 @@ const Fusion = () => {
     return convertedData;
   };
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
     e.preventDefault();
     const data = convertToShape(sensorData);
@@ -57,9 +56,16 @@ const Fusion = () => {
         console.log(err);
         throw new Error("Failed to submit data");
       }
+      const class_map = {
+        0: "No Gas",
+        1: "Mixture",
+        2: "Perfume",
+        3: "Smoke",
+      };
       const x = await response.text();
-      console.log(x);
-      setOutput(x);
+      console.log(class_map[x[1]]);
+
+      setOutput(class_map[x[1]]);
     } catch (error) {
       console.error("Error submitting data:", error);
     }

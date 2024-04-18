@@ -34,8 +34,14 @@ const ThermalImage = () => {
         throw new Error("Failed to submit data");
       }
       const x = await response.text();
-      console.log(x);
-      setOutput(x);
+      const class_map = {
+        0: "Mixture",
+        1: "No Gas",
+        2: "Perfume",
+        3: "Smoke",
+      };
+      console.log(class_map[x[1]]);
+      setOutput(class_map[x[1]]);
     } catch (error) {
       console.error("Error submitting data:", error);
     }
@@ -157,7 +163,7 @@ const ThermalImage = () => {
                 )}
               </div>
               <button className="sub" type="submit">
-                Submit 
+                Submit
               </button>
             </form>
           </div>
