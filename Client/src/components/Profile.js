@@ -20,7 +20,10 @@ const Profile = () => {
     const storedValue = localStorage.getItem("alertt");
     return storedValue ? parseInt(storedValue) : 0; // Initial value or stored value
   });
-
+  const [sim, setsim] = useState(() => {
+    const storedValue = localStorage.getItem("sim");
+    return storedValue ? parseInt(storedValue) : 0; // Initial value or stored value
+  });
   const handleAddRoom = () => {
     setCounter(counter + 1);
     setComponents([...components, <Room key={counter} counter={counter} />]);
@@ -74,6 +77,7 @@ const Profile = () => {
         if (x[1] === "3") {
           setalert(alertt + 1);
           settest(false);
+          setsim(1);
           break;
         }
 
@@ -105,7 +109,13 @@ const Profile = () => {
     localStorage.setItem("alertt", alertt);
   }, [alertt]);
   useEffect(() => {
-    check(imageUrls);
+    localStorage.setItem("sim", sim);
+  }, [sim]);
+  useEffect(() => {
+    console.log(sim);
+    if (sim === 0) {
+      check(imageUrls);
+    }
   }, []);
   if (!test) {
     navigate("/fail");
@@ -131,7 +141,7 @@ const Profile = () => {
         <div class="container-fluid text-center">
           <div class="row content">
             <div class="Rooms col-sm-3 sidenav mx-auto">
-              <h2>Room {room}</h2>
+              <h2>Location {room}</h2>
               <div class="row">
                 <div class="logo col-sm-12">
                   <img src={Camera} alt="Logo" className="sensor-logo" />
@@ -184,7 +194,7 @@ const Profile = () => {
           <div className="row>">
             {components.map((component) => component)}
             <button className="sub1" onClick={handleAddRoom} type="submit">
-              ADD Room
+              ADD Location
             </button>
           </div>
           {/* <div className='row>'>

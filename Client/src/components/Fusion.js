@@ -40,31 +40,28 @@ const Fusion = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    e.preventDefault();
-    const data = convertToShape(sensorData);
-
+    // Handle image submission logic here, such as sending the image to a server
+    console.log("Submitted image:", image);
+    const formData = new FormData();
+    formData.append("image", image);
     try {
-      const response = await fetch("http://127.0.0.1:5000/sensor", {
+      const response = await fetch("http://127.0.0.1:5000/thermal", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData, // Send image as base64 string
       });
       if (!response.ok) {
         const err = await response.text();
         console.log(err);
         throw new Error("Failed to submit data");
       }
+      const x = await response.text();
       const class_map = {
-        0: "No Gas",
-        1: "Mixture",
+        0: "Mixture",
+        1: "No Gas",
         2: "Perfume",
         3: "Smoke",
       };
-      const x = await response.text();
       console.log(class_map[x[1]]);
-
       setOutput(class_map[x[1]]);
     } catch (error) {
       console.error("Error submitting data:", error);
