@@ -48,7 +48,7 @@ const Fusion = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/thermal", {
+      const response = await fetch("http://127.0.0.1:5000/fusion", {
         method: "POST",
         body: formData,
       });

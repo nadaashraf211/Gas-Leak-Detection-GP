@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 
@@ -11,6 +12,7 @@ import matplotlib.image as mpimg
 
 
 app = Flask(__name__)
+CORS(app)
 
 cnn_model = load_model('CNN/CNN.h5')
 BIlstm_model=load_model('BIlstm/BiLSTM2.h5')
