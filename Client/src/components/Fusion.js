@@ -20,6 +20,7 @@ const Fusion = () => {
     f6: "",
     f7: "",
   });
+
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setIsFileSelected(true);
@@ -31,23 +32,25 @@ const Fusion = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const convertToShape = (data) => {
-    const convertedData = {};
-    Object.keys(data).forEach((key, index) => {
-      convertedData[index] = parseInt(data[key]); // Assuming you want the values to be integers
-    });
-    return convertedData;
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle image submission logic here, such as sending the image to a server
-    console.log("Submitted image:", image);
+
     const formData = new FormData();
+    /*formData.append("f1", sensorData.f1);
+    formData.append("f2", sensorData.f2);
+    formData.append("f3", sensorData.f3);
+    formData.append("f4", sensorData.f4);
+    formData.append("f5", sensorData.f5);
+    formData.append("f6", sensorData.f6);
+    formData.append("f7", sensorData.f7);*/
+
     formData.append("image", image);
+
     try {
       const response = await fetch("http://127.0.0.1:5000/thermal", {
         method: "POST",
-        body: formData, // Send image as base64 string
+        body: formData,
       });
       if (!response.ok) {
         const err = await response.text();
