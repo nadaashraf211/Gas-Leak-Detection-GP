@@ -46,7 +46,7 @@ def predict_therm():
     return jsonify(str(argmax_predictions[0]))
 
 
-@app.route("/fusion ", methods=['POST'])
+@app.route("/fusion", methods=['POST'])
 def predict_fusion():
     image_file = request.files['image']
     image = Image.open(io.BytesIO(image_file.read()))
@@ -55,17 +55,17 @@ def predict_fusion():
     image_array = np.expand_dims(image_array, axis=0)
 
 
-    '''feature1 = request.form['f1']
-    feature2 = request.form['f2']
-    feature3 = request.form['f3']
-    feature4 = request.form['f4']
-    feature5 = request.form['f5']    
-    feature6 = request.form['f6']
-    feature7 = request.form['f7']
+    feature1 = request.form['1']
+    feature2 = request.form['2']
+    feature3 = request.form['3']
+    feature4 = request.form['4']
+    feature5 = request.form['5']    
+    feature6 = request.form['6']
+    feature7 = request.form['7']
     inputs = np.array([[feature1,feature2,feature3,feature4,feature5,feature6,feature7]])
     input_data=loaded_scaler.transform(inputs)
-    input_data_reshaped = input_data.reshape(input_data.shape[0], 1, (input_data.shape[1]))'''
-    pred=cnn_model.predict(image_array)
+    input_data_reshaped = input_data.reshape(input_data.shape[0], 1, (input_data.shape[1]))
+    pred=fusion_model.predict([input_data_reshaped,image_array])
     argmax_predictions = np.argmax(pred, axis=1)
     return jsonify(str(argmax_predictions[0]))
 

@@ -37,13 +37,13 @@ const Fusion = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    /*formData.append("f1", sensorData.f1);
-    formData.append("f2", sensorData.f2);
-    formData.append("f3", sensorData.f3);
-    formData.append("f4", sensorData.f4);
-    formData.append("f5", sensorData.f5);
-    formData.append("f6", sensorData.f6);
-    formData.append("f7", sensorData.f7);*/
+    formData.append("1", sensorData.f1);
+    formData.append("2", sensorData.f2);
+    formData.append("3", sensorData.f3);
+    formData.append("4", sensorData.f4);
+    formData.append("5", sensorData.f5);
+    formData.append("6", sensorData.f6);
+    formData.append("7", sensorData.f7);
 
     formData.append("image", image);
 
